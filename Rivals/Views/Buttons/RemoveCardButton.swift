@@ -11,7 +11,7 @@ struct RemoveCardButton: View {
     var body: some View {
         Image(systemName: "minus.rectangle.fill")
             .resizable()
-            .frame(width: 35, height: 25)
+            .frame(width: 40, height: 35)
     }
 }
 

@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct ClanFilterButtonView: View {
+    @Binding var searchText: String
+    @Binding var clanClicked: Bool
+    @Binding var showClanFilter: Bool
     
     var clanName: String
     var clanIcon: String
     
     var body: some View {
         Button {
-            print("Tapped")
+            searchText = clanName
+            clanClicked.toggle()
+            showClanFilter.toggle()
         } label: {
             
             VStack {
@@ -33,6 +38,3 @@ struct ClanFilterButtonView: View {
     }
 }
 
-#Preview {
-    ClanFilterButtonView(clanName: "Bruha", clanIcon: "clan-banu-haqim")
-}

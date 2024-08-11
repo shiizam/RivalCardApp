@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BC01947A2BBF3C3E00F19117 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC0194792BBF3C3E00F19117 /* GoogleService-Info.plist */; };
+		BC1289372C5FFCC8007E422E /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1289362C5FFCC8007E422E /* AccountView.swift */; };
 		BC137E672B8A8363009E077E /* RivalsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC137E662B8A8363009E077E /* RivalsApp.swift */; };
 		BC137E692B8A8363009E077E /* RivalTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC137E682B8A8363009E077E /* RivalTabView.swift */; };
 		BC137E6B2B8A8364009E077E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC137E6A2B8A8364009E077E /* Assets.xcassets */; };
@@ -16,11 +17,9 @@
 		BC137E822B8A8364009E077E /* RivalsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC137E812B8A8364009E077E /* RivalsUITests.swift */; };
 		BC137E842B8A8364009E077E /* RivalsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC137E832B8A8364009E077E /* RivalsUITestsLaunchTests.swift */; };
 		BC137E942B8A870E009E077E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BC137E932B8A870E009E077E /* FirebaseAnalytics */; };
-		BC137E962B8A88CA009E077E /* CardsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC137E952B8A88CA009E077E /* CardsGridView.swift */; };
 		BC137E982B8A8A2A009E077E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BC137E972B8A8A2A009E077E /* FirebaseStorage */; };
 		BC137E9A2B8A8ACC009E077E /* ClansGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC137E992B8A8ACC009E077E /* ClansGridViewModel.swift */; };
 		BC137E9C2B8A8AF5009E077E /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC137E9B2B8A8AF5009E077E /* BackgroundView.swift */; };
-		BC137EA02B8A8FBB009E077E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC137E9F2B8A8FBB009E077E /* LoginView.swift */; };
 		BC137EA22B8A9003009E077E /* NewDeckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC137EA12B8A9003009E077E /* NewDeckButton.swift */; };
 		BC137EA42B8A90DF009E077E /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC137EA32B8A90DF009E077E /* Color+Ext.swift */; };
 		BC137EA62B8A9530009E077E /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC137EA52B8A9530009E077E /* AccountViewModel.swift */; };
@@ -36,15 +35,31 @@
 		BC30903E2BB45F1600F4B17F /* AddCardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC30903D2BB45F1600F4B17F /* AddCardButton.swift */; };
 		BC3090422BB4779000F4B17F /* ClanFilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3090412BB4779000F4B17F /* ClanFilterButtonView.swift */; };
 		BC4120652BAF8E640029046D /* NewDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4120642BAF8E630029046D /* NewDeckView.swift */; };
+		BC598C542C5D21910034C0B6 /* UserStateVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC598C532C5D21910034C0B6 /* UserStateVM.swift */; };
 		BC63896F2BB5C1C20031A9CA /* ClanFilterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC63896E2BB5C1C20031A9CA /* ClanFilterListView.swift */; };
-		BC6389732BB5FFAB0031A9CA /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6389722BB5FFAB0031A9CA /* Deck.swift */; };
+		BC7C78942C5549F4009F9093 /* FilledLeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C78932C5549F4009F9093 /* FilledLeaderButton.swift */; };
+		BC7EB4312C66623A009C56F4 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EB4302C66623A009C56F4 /* DeckView.swift */; };
+		BC7EB4362C6692F9009C56F4 /* NewDeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EB4352C6692F9009C56F4 /* NewDeckViewModel.swift */; };
+		BC9588E22C5EBC0F00997A96 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9588E12C5EBC0F00997A96 /* RegisterView.swift */; };
+		BC9588E42C5EC36E00997A96 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9588E32C5EC36E00997A96 /* LoginButton.swift */; };
+		BCA2CD772C5E99BA007B5992 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA2CD762C5E99BA007B5992 /* HomeView.swift */; };
+		BCA2CD792C5EB203007B5992 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA2CD782C5EB203007B5992 /* LoginView.swift */; };
 		BCAA1AC72BB7445F006EB789 /* NewDeckListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAA1AC62BB7445F006EB789 /* NewDeckListCell.swift */; };
 		BCAA1AC92BB7489C006EB789 /* RemoveCardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAA1AC82BB7489C006EB789 /* RemoveCardButton.swift */; };
 		BCBB5A7D2BA39E3D0092D8F6 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB5A7C2BA39E3D0092D8F6 /* Card.swift */; };
-		BCBB5A802BA3A7640092D8F6 /* fetchCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB5A7F2BA3A7640092D8F6 /* fetchCardData.swift */; };
 		BCC82EE52B9955E100D0B0AB /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC82EE42B9955E100D0B0AB /* common.swift */; };
+		BCE50ABD2C650415007148E0 /* DecksResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE50ABC2C650415007148E0 /* DecksResponseData.swift */; };
 		BCEAA3762BB31EF0004114B2 /* CardCopyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEAA3752BB31EF0004114B2 /* CardCopyPicker.swift */; };
 		BCEAA3782BB3244F004114B2 /* SingleCopyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEAA3772BB3244F004114B2 /* SingleCopyPicker.swift */; };
+		BCEBD19D2C5BE15700E878D0 /* EmptyLeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEBD19C2C5BE15700E878D0 /* EmptyLeaderButton.swift */; };
+		BCF889872C58226000B48F22 /* postDeckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF889862C58226000B48F22 /* postDeckRequest.swift */; };
+		BCF8898A2C58373B00B48F22 /* NameDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF889892C58373B00B48F22 /* NameDeckView.swift */; };
+		BCF8A6492C617382007C2E63 /* LoginResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF8A6482C617382007C2E63 /* LoginResponseData.swift */; };
+		BCF8A64B2C61744A007C2E63 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF8A64A2C61744A007C2E63 /* NetworkManager.swift */; };
+		BCF8A64E2C626BD2007C2E63 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF8A64D2C626BD2007C2E63 /* KeychainHelper.swift */; };
+		BCF8A6512C62784F007C2E63 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF8A6502C62784F007C2E63 /* AppState.swift */; };
+		BCF8A6532C62BA21007C2E63 /* InputPlaceholder+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF8A6522C62BA21007C2E63 /* InputPlaceholder+Ext.swift */; };
+		BCF8A6582C62C1A1007C2E63 /* TabBar+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF8A6572C62C1A1007C2E63 /* TabBar+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +81,7 @@
 
 /* Begin PBXFileReference section */
 		BC0194792BBF3C3E00F19117 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BC1289362C5FFCC8007E422E /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		BC137E632B8A8363009E077E /* Rivals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rivals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC137E662B8A8363009E077E /* RivalsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RivalsApp.swift; sourceTree = "<group>"; };
 		BC137E682B8A8363009E077E /* RivalTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RivalTabView.swift; sourceTree = "<group>"; };
@@ -76,10 +92,8 @@
 		BC137E7D2B8A8364009E077E /* RivalsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RivalsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC137E812B8A8364009E077E /* RivalsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RivalsUITests.swift; sourceTree = "<group>"; };
 		BC137E832B8A8364009E077E /* RivalsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RivalsUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		BC137E952B8A88CA009E077E /* CardsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsGridView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BC137E992B8A8ACC009E077E /* ClansGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClansGridViewModel.swift; sourceTree = "<group>"; };
 		BC137E9B2B8A8AF5009E077E /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
-		BC137E9F2B8A8FBB009E077E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BC137EA12B8A9003009E077E /* NewDeckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeckButton.swift; sourceTree = "<group>"; };
 		BC137EA32B8A90DF009E077E /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		BC137EA52B8A9530009E077E /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
@@ -95,15 +109,31 @@
 		BC30903D2BB45F1600F4B17F /* AddCardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardButton.swift; sourceTree = "<group>"; };
 		BC3090412BB4779000F4B17F /* ClanFilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanFilterButtonView.swift; sourceTree = "<group>"; };
 		BC4120642BAF8E630029046D /* NewDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeckView.swift; sourceTree = "<group>"; };
+		BC598C532C5D21910034C0B6 /* UserStateVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStateVM.swift; sourceTree = "<group>"; };
 		BC63896E2BB5C1C20031A9CA /* ClanFilterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanFilterListView.swift; sourceTree = "<group>"; };
-		BC6389722BB5FFAB0031A9CA /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		BC7C78932C5549F4009F9093 /* FilledLeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledLeaderButton.swift; sourceTree = "<group>"; };
+		BC7EB4302C66623A009C56F4 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
+		BC7EB4352C6692F9009C56F4 /* NewDeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeckViewModel.swift; sourceTree = "<group>"; };
+		BC9588E12C5EBC0F00997A96 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		BC9588E32C5EC36E00997A96 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		BCA2CD762C5E99BA007B5992 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BCA2CD782C5EB203007B5992 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BCAA1AC62BB7445F006EB789 /* NewDeckListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeckListCell.swift; sourceTree = "<group>"; };
 		BCAA1AC82BB7489C006EB789 /* RemoveCardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveCardButton.swift; sourceTree = "<group>"; };
 		BCBB5A7C2BA39E3D0092D8F6 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		BCBB5A7F2BA3A7640092D8F6 /* fetchCardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetchCardData.swift; sourceTree = "<group>"; };
 		BCC82EE42B9955E100D0B0AB /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
+		BCE50ABC2C650415007148E0 /* DecksResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksResponseData.swift; sourceTree = "<group>"; };
 		BCEAA3752BB31EF0004114B2 /* CardCopyPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCopyPicker.swift; sourceTree = "<group>"; };
 		BCEAA3772BB3244F004114B2 /* SingleCopyPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCopyPicker.swift; sourceTree = "<group>"; };
+		BCEBD19C2C5BE15700E878D0 /* EmptyLeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyLeaderButton.swift; sourceTree = "<group>"; };
+		BCF889862C58226000B48F22 /* postDeckRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postDeckRequest.swift; sourceTree = "<group>"; };
+		BCF889892C58373B00B48F22 /* NameDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameDeckView.swift; sourceTree = "<group>"; };
+		BCF8A6482C617382007C2E63 /* LoginResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseData.swift; sourceTree = "<group>"; };
+		BCF8A64A2C61744A007C2E63 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BCF8A64D2C626BD2007C2E63 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		BCF8A6502C62784F007C2E63 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		BCF8A6522C62BA21007C2E63 /* InputPlaceholder+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputPlaceholder+Ext.swift"; sourceTree = "<group>"; };
+		BCF8A6572C62C1A1007C2E63 /* TabBar+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBar+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				BC137E662B8A8363009E077E /* RivalsApp.swift */,
+				BC137E682B8A8363009E077E /* RivalTabView.swift */,
 				BC137EBD2B8A9DC2009E077E /* Model */,
 				BC137EB72B8A9CEB009E077E /* Utilities */,
 				BC137EB62B8A9CD8009E077E /* Views */,
@@ -197,11 +228,13 @@
 		BC137EB52B8A9CCE009E077E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				BC7EB42F2C66622A009C56F4 /* DeckView */,
+				BC9588E02C5EBBFF00997A96 /* RegisterView */,
+				BCA2CD752C5E99AB007B5992 /* HomeView */,
+				BCA2CD6E2C5E9752007B5992 /* AuthViews */,
 				BC4120632BAF8E500029046D /* NewDeckView */,
-				BC137E682B8A8363009E077E /* RivalTabView.swift */,
 				BC137EB82B8A9D19009E077E /* AccountView */,
 				BC137EBA2B8A9D3C009E077E /* CardView */,
-				BC137EB92B8A9D26009E077E /* LoginView */,
 				BC137EBE2B8A9DE8009E077E /* UserDeckView */,
 			);
 			path = Screens;
@@ -210,6 +243,7 @@
 		BC137EB62B8A9CD8009E077E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BC7EB4342C6692A9009C56F4 /* Sheets */,
 				BCEAA3742BB31E93004114B2 /* Pickers */,
 				BC137EC02B8A9E2B009E077E /* Background */,
 				BC137EBF2B8A9E1A009E077E /* Buttons */,
@@ -220,6 +254,9 @@
 		BC137EB72B8A9CEB009E077E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BCF8A64F2C627842007C2E63 /* AppState */,
+				BCF8A64C2C626BAB007C2E63 /* KeychainHelper */,
+				BCF8A6472C617284007C2E63 /* NetworkManager */,
 				BCBB5A7E2BA3A7430092D8F6 /* API */,
 				BC137EBC2B8A9DA1009E077E /* Alerts */,
 				BC137EBB2B8A9D8E009E077E /* Extensions */,
@@ -231,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				BC137EA52B8A9530009E077E /* AccountViewModel.swift */,
+				BC1289362C5FFCC8007E422E /* AccountView.swift */,
 			);
 			path = AccountView;
 			sourceTree = "<group>";
@@ -238,7 +276,7 @@
 		BC137EB92B8A9D26009E077E /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
-				BC137E9F2B8A8FBB009E077E /* LoginView.swift */,
+				BCA2CD782C5EB203007B5992 /* LoginView.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -246,7 +284,6 @@
 		BC137EBA2B8A9D3C009E077E /* CardView */ = {
 			isa = PBXGroup;
 			children = (
-				BC137E952B8A88CA009E077E /* CardsGridView.swift */,
 				BC137EC12B8A9E85009E077E /* CardsHListView.swift */,
 				BC24640C2BAE1EEC003B5751 /* AllCardsView.swift */,
 			);
@@ -258,6 +295,8 @@
 			children = (
 				BC137EAD2B8A9707009E077E /* String+Ext.swift */,
 				BC137EA32B8A90DF009E077E /* Color+Ext.swift */,
+				BCF8A6522C62BA21007C2E63 /* InputPlaceholder+Ext.swift */,
+				BCF8A6572C62C1A1007C2E63 /* TabBar+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -277,7 +316,8 @@
 				BCC82EE32B9955B200D0B0AB /* cardCollection */,
 				BC137EA72B8A9618009E077E /* User.swift */,
 				BCBB5A7C2BA39E3D0092D8F6 /* Card.swift */,
-				BC6389722BB5FFAB0031A9CA /* Deck.swift */,
+				BCF8A6482C617382007C2E63 /* LoginResponseData.swift */,
+				BCE50ABC2C650415007148E0 /* DecksResponseData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,6 +338,9 @@
 				BC137EA12B8A9003009E077E /* NewDeckButton.swift */,
 				BC30903D2BB45F1600F4B17F /* AddCardButton.swift */,
 				BCAA1AC82BB7489C006EB789 /* RemoveCardButton.swift */,
+				BC7C78932C5549F4009F9093 /* FilledLeaderButton.swift */,
+				BCEBD19C2C5BE15700E878D0 /* EmptyLeaderButton.swift */,
+				BC9588E32C5EC36E00997A96 /* LoginButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -317,14 +360,56 @@
 				BC3090412BB4779000F4B17F /* ClanFilterButtonView.swift */,
 				BC63896E2BB5C1C20031A9CA /* ClanFilterListView.swift */,
 				BCAA1AC62BB7445F006EB789 /* NewDeckListCell.swift */,
+				BC7EB4352C6692F9009C56F4 /* NewDeckViewModel.swift */,
 			);
 			path = NewDeckView;
+			sourceTree = "<group>";
+		};
+		BC7EB42F2C66622A009C56F4 /* DeckView */ = {
+			isa = PBXGroup;
+			children = (
+				BC7EB4302C66623A009C56F4 /* DeckView.swift */,
+			);
+			path = DeckView;
+			sourceTree = "<group>";
+		};
+		BC7EB4342C6692A9009C56F4 /* Sheets */ = {
+			isa = PBXGroup;
+			children = (
+				BCF889892C58373B00B48F22 /* NameDeckView.swift */,
+			);
+			path = Sheets;
+			sourceTree = "<group>";
+		};
+		BC9588E02C5EBBFF00997A96 /* RegisterView */ = {
+			isa = PBXGroup;
+			children = (
+				BC9588E12C5EBC0F00997A96 /* RegisterView.swift */,
+			);
+			path = RegisterView;
+			sourceTree = "<group>";
+		};
+		BCA2CD6E2C5E9752007B5992 /* AuthViews */ = {
+			isa = PBXGroup;
+			children = (
+				BC137EB92B8A9D26009E077E /* LoginView */,
+			);
+			path = AuthViews;
+			sourceTree = "<group>";
+		};
+		BCA2CD752C5E99AB007B5992 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				BCA2CD762C5E99BA007B5992 /* HomeView.swift */,
+			);
+			path = HomeView;
 			sourceTree = "<group>";
 		};
 		BCBB5A7E2BA3A7430092D8F6 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				BCBB5A7F2BA3A7640092D8F6 /* fetchCardData.swift */,
+				BCF889862C58226000B48F22 /* postDeckRequest.swift */,
+				BC598C532C5D21910034C0B6 /* UserStateVM.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -344,6 +429,30 @@
 				BCEAA3772BB3244F004114B2 /* SingleCopyPicker.swift */,
 			);
 			path = Pickers;
+			sourceTree = "<group>";
+		};
+		BCF8A6472C617284007C2E63 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				BCF8A64A2C61744A007C2E63 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		BCF8A64C2C626BAB007C2E63 /* KeychainHelper */ = {
+			isa = PBXGroup;
+			children = (
+				BCF8A64D2C626BD2007C2E63 /* KeychainHelper.swift */,
+			);
+			path = KeychainHelper;
+			sourceTree = "<group>";
+		};
+		BCF8A64F2C627842007C2E63 /* AppState */ = {
+			isa = PBXGroup;
+			children = (
+				BCF8A6502C62784F007C2E63 /* AppState.swift */,
+			);
+			path = AppState;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,33 +593,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC6389732BB5FFAB0031A9CA /* Deck.swift in Sources */,
 				BCAA1AC72BB7445F006EB789 /* NewDeckListCell.swift in Sources */,
-				BC137EA02B8A8FBB009E077E /* LoginView.swift in Sources */,
+				BCA2CD792C5EB203007B5992 /* LoginView.swift in Sources */,
+				BC9588E22C5EBC0F00997A96 /* RegisterView.swift in Sources */,
+				BC1289372C5FFCC8007E422E /* AccountView.swift in Sources */,
+				BC7EB4312C66623A009C56F4 /* DeckView.swift in Sources */,
 				BC137EA22B8A9003009E077E /* NewDeckButton.swift in Sources */,
 				BCBB5A7D2BA39E3D0092D8F6 /* Card.swift in Sources */,
 				BC137EB02B8A982A009E077E /* UserDecksView.swift in Sources */,
+				BCF8A6492C617382007C2E63 /* LoginResponseData.swift in Sources */,
+				BCF8A6532C62BA21007C2E63 /* InputPlaceholder+Ext.swift in Sources */,
+				BCF8A64E2C626BD2007C2E63 /* KeychainHelper.swift in Sources */,
 				BC30903E2BB45F1600F4B17F /* AddCardButton.swift in Sources */,
 				BCEAA3782BB3244F004114B2 /* SingleCopyPicker.swift in Sources */,
 				BC137E9C2B8A8AF5009E077E /* BackgroundView.swift in Sources */,
 				BC137EAE2B8A9707009E077E /* String+Ext.swift in Sources */,
+				BC7EB4362C6692F9009C56F4 /* NewDeckViewModel.swift in Sources */,
+				BCF889872C58226000B48F22 /* postDeckRequest.swift in Sources */,
 				BCEAA3762BB31EF0004114B2 /* CardCopyPicker.swift in Sources */,
+				BCA2CD772C5E99BA007B5992 /* HomeView.swift in Sources */,
+				BCE50ABD2C650415007148E0 /* DecksResponseData.swift in Sources */,
+				BCF8898A2C58373B00B48F22 /* NameDeckView.swift in Sources */,
 				BC137EB42B8A98B7009E077E /* UserDeckTitleView.swift in Sources */,
+				BCEBD19D2C5BE15700E878D0 /* EmptyLeaderButton.swift in Sources */,
+				BC598C542C5D21910034C0B6 /* UserStateVM.swift in Sources */,
 				BC137EC22B8A9E85009E077E /* CardsHListView.swift in Sources */,
 				BC63896F2BB5C1C20031A9CA /* ClanFilterListView.swift in Sources */,
 				BC24640D2BAE1EEC003B5751 /* AllCardsView.swift in Sources */,
+				BCF8A64B2C61744A007C2E63 /* NetworkManager.swift in Sources */,
 				BC137EAC2B8A9681009E077E /* RivalsError.swift in Sources */,
 				BCC82EE52B9955E100D0B0AB /* common.swift in Sources */,
 				BC137E692B8A8363009E077E /* RivalTabView.swift in Sources */,
+				BCF8A6582C62C1A1007C2E63 /* TabBar+Ext.swift in Sources */,
 				BC137EB22B8A9848009E077E /* UserDecksViewModel.swift in Sources */,
 				BC137EA62B8A9530009E077E /* AccountViewModel.swift in Sources */,
-				BC137E962B8A88CA009E077E /* CardsGridView.swift in Sources */,
 				BC3090422BB4779000F4B17F /* ClanFilterButtonView.swift in Sources */,
 				BC137EA42B8A90DF009E077E /* Color+Ext.swift in Sources */,
+				BC9588E42C5EC36E00997A96 /* LoginButton.swift in Sources */,
 				BCAA1AC92BB7489C006EB789 /* RemoveCardButton.swift in Sources */,
 				BC4120652BAF8E640029046D /* NewDeckView.swift in Sources */,
 				BC137E9A2B8A8ACC009E077E /* ClansGridViewModel.swift in Sources */,
-				BCBB5A802BA3A7640092D8F6 /* fetchCardData.swift in Sources */,
+				BC7C78942C5549F4009F9093 /* FilledLeaderButton.swift in Sources */,
+				BCF8A6512C62784F007C2E63 /* AppState.swift in Sources */,
 				BC137EAA2B8A9658009E077E /* Alert.swift in Sources */,
 				BC137EA82B8A9618009E077E /* User.swift in Sources */,
 				BC137E672B8A8363009E077E /* RivalsApp.swift in Sources */,
@@ -680,6 +804,7 @@
 				DEVELOPMENT_TEAM = 8ABLN65N8T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -714,6 +839,7 @@
 				DEVELOPMENT_TEAM = 8ABLN65N8T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

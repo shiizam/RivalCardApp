@@ -16,15 +16,17 @@ struct AllCardsView: View {
     @Query(sort: \Card.id) private var cards: [Card]
     
     @State private var searchText: String = ""
+    @State private var path = NavigationPath()
+    
     var filteredCards: [Card] {
         guard !searchText.isEmpty else { return cards }
         return cards.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
     }
-    
+
     
     var body: some View {
         
-        NavigationStack {
+        NavigationStack(path: $path) {
             ZStack {
                 
                 BackgroundView()
@@ -38,6 +40,7 @@ struct AllCardsView: View {
                             AsyncImage(url: URL(string: card.imageURL)) { image in
                                 image
                                     .resizable()
+                                    .cornerRadius(10)
                             } placeholder: {
                                 
                                 Rectangle()
@@ -56,7 +59,6 @@ struct AllCardsView: View {
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)
                 }
-                
                 .scrollContentBackground(.hidden)
             }
             .navigationTitle("VTM: Cards")
@@ -71,6 +73,7 @@ struct AllCardsView: View {
                 }
             }
             .searchable(text: $searchText, prompt: "Search Cards")
+            
         }
     }
 }
@@ -84,6 +87,7 @@ extension AllCardsView {
     
     func fetchCardData() async throws {
         let url = URL(string: "http://10.0.0.244:8000/cards")!
+      
         let request = URLRequest(url: url)
         let (data, _) = try await URLSession.shared.data(for: request)
         

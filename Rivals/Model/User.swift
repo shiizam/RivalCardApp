@@ -8,15 +8,16 @@
 import Foundation
 
 
-struct User: Codable {
-    var email       = ""
-    var firstName   = ""
-    var lastName    = ""
+struct User: Codable, Hashable {
+    let id          : Int
+    let email       : String
+    let username    : String
 }
 
 
 struct NewUser: Codable {
-    var email           = ""
-    var username        = ""
-    var password        = ""
+    let email               : String
+    let username            : String
+    let password            : String
+    let confirm_password    : String
 }

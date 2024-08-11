@@ -9,22 +9,22 @@ import SwiftUI
 
 struct UserDecksTitleView: View {
     
-    let deck: UserDeck
+    let deck: DecksResponseData
 
     var body: some View {
         ZStack {
             
             VStack {
                 
-                Image(deck.deckLogo)
+                Image("vtm-bg")
                     .symbolRenderingMode(.multicolor)
                     .resizable()
                     .frame(width: 90, height: 90)
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(12)
                 
-                Text(deck.name)
-                    .font(.title2)
+                Text(deck.deck_name)
+                    .font(.title3)
                     .fontWeight(.semibold)
                     .scaledToFit()
                     .minimumScaleFactor(0.6)
@@ -34,6 +34,6 @@ struct UserDecksTitleView: View {
     }
 }
 
-#Preview {
-    UserDecksTitleView(deck: UserDeckData.sampleUserDeck)
-}
+//#Preview {
+//    UserDecksTitleView(deck: UserDeckData.sampleUserDeck)
+//}
