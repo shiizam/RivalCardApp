@@ -38,12 +38,25 @@ class AppState: ObservableObject {
 
     }
     
+    func deleteDeck(deckId: Int) async throws {
+        return try await withCheckedThrowingContinuation { continuation in
+            NetworkManager.shared.makeAuthRequestNoResponse(endpoint: "decks/\(deckId)", method: "DELETE") { result in
+                switch result {
+                case .success:
+                    continuation.resume(returning: ())
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
+    
     func fetchDecks() async throws -> [DecksResponseData] {
         return try await withCheckedThrowingContinuation { continuation in
             NetworkManager.shared.makeAuthenticatedRequest(endpoint: "decks/", method: "GET", responseType: [DecksResponseData].self) { result in
                 switch result {
                 case .success(let responseData):
-                    print("Fetch Decks Reponse: \(responseData)")
+                    print("Fetch Decks Reponse: \(String(describing: responseData))")
                     continuation.resume(returning: responseData)
                 case .failure(let error):
                     continuation.resume(throwing: error)
@@ -110,6 +123,5 @@ class AppState: ObservableObject {
     private func deleteUser() {
         UserDefaults.standard.removeObject(forKey: "user")
     }
-    
 
 }

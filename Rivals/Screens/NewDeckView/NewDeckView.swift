@@ -19,11 +19,12 @@ struct NewDeckView: View {
     @State private var showSaveDeck = false
     @State private var showClanFilter = false
     @State private var showSaveButton = false
-    @State private var havenCard: String = ""
-    @State private var agendaCard: String = ""
+    
     
     // Search bar functionallity
     @State private var searchText: String = ""
+    @State private var deckCardIDs: Set<String> = []
+    
     var filteredCards: [Card] {
         guard !searchText.isEmpty else { return cards }
         return cards.filter {
@@ -33,13 +34,17 @@ struct NewDeckView: View {
             $0.attack.compactMap {$0?.lowercased() }.contains { $0.contains(searchText.lowercased())} // search by attack
         }
     }
+    
+    
+    var initialDeck: DecksResponseData?
         
     
     // Change Navigation Title font color, Search Bar Background color and font colors
-    init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .black
+    init(initialDeck: DecksResponseData? = nil) {
+        self.initialDeck = initialDeck
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.label]
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .systemBackground
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .label
     }
     
     
@@ -57,56 +62,73 @@ struct NewDeckView: View {
                         
                         Text("Faction Cards: \(viewModel.factionTotal)/7")
                             .font(.headline)
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.primary)
                         
                         Text("Library Cards:\(viewModel.libraryTotal)/40")
                             .font(.headline)
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.primary)
                     }
                     
                     HStack {
                         Text("Leader: ")
                             .font(.subheadline)
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.primary)
                         Text(viewModel.leaderCard)
                             .font(.caption)
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.primary)
                         
                         Text("Haven: ")
                             .font(.subheadline)
-                            .foregroundStyle(.white)
-                        Text(havenCard)
+                            .foregroundStyle(.primary)
+                        Text(viewModel.havenCard)
                             .font(.caption)
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.primary)
                         
                         Text("Agenda: ")
                             .font(.subheadline)
-                            .foregroundStyle(.white)
-                        Text(agendaCard)
+                            .foregroundStyle(.primary)
+                        Text(viewModel.agendaCard)
                             .font(.caption)
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.primary)
                     }
                     
-                    HStack {
-                        
-                        Button {
-                            showClanFilter.toggle()
-                        } label: {
-                            Text("Filter by Clan")
-                                .frame(width: 140, height: 35)
-                                .background(.secondary)
-                                .foregroundStyle(.white)
-                                .cornerRadius(10)
-                                .padding(.vertical)
+                    VStack(spacing: .none) {
+                        HStack {
+                            
+                            Button {
+                                showClanFilter.toggle()
+                            } label: {
+                                Text("Filter by Clan")
+                                    .frame(width: 140, height: 35)
+                                    .background(.orange)
+                                    .foregroundStyle(.primary)
+                                    .cornerRadius(10)
+                                    .padding(.vertical)
+                            }
+                            .sheet(isPresented: $showClanFilter) {
+                                ClanFilterListView(searchText: $searchText, clanClicked: $clanClicked, showClanFilter: $showClanFilter)
+                                    .presentationDetents([.fraction(0.75)])
+                                    .presentationDragIndicator(.visible)
+                                    .presentationBackground(.ultraThinMaterial)
+                            }
+                            
+                            if viewModel.newDeckDict.isEmpty != true {
+                                // ALL CURRENT CARDS IN NEW DECK BUTTON
+                                Button {
+                                    print("This will show the view of all the cards in the current new deck")
+                                } label: {
+                                    Text("Deck Cards")
+                                        .frame(width: 140, height: 35)
+                                        .background(.blue)
+                                        .foregroundStyle(.white)
+                                        .cornerRadius(10)
+                                        .padding(.vertical)
+                                    
+                                }
+                            }
                         }
-                        .sheet(isPresented: $showClanFilter) {
-                            ClanFilterListView(searchText: $searchText, clanClicked: $clanClicked, showClanFilter: $showClanFilter)
-                                .presentationDetents([.fraction(0.75)])
-                                .presentationDragIndicator(.visible)
-                                .presentationBackground(.ultraThinMaterial)
-                        }
-                        
                         if viewModel.newDeckDict.isEmpty != true {
+                            // SAVE BUTTON
                             Button {
                                 
                                 showSaveDeck.toggle()
@@ -119,6 +141,7 @@ struct NewDeckView: View {
                                     .cornerRadius(10)
                                     .padding(.vertical)
                             }
+                            // SAVE DECK MODAL - TAKES UP 40% (.40) OF THE SCREEN
                             .sheet(isPresented: $showSaveDeck) {
                                 NameDeckView()
                                     .presentationDetents([.fraction(0.40)])
@@ -126,22 +149,36 @@ struct NewDeckView: View {
                                     .presentationBackground(.ultraThinMaterial)
                             }
                         }
-                        
                     }
                     
                     List(filteredCards, id: \.self) { card in
-                        NewDeckListCell(newDeckDict: $viewModel.newDeckDict, libraryTotal: $viewModel.libraryTotal, factionTotal: $viewModel.factionTotal, leaderCard: $viewModel.leaderCard, hasLeader: $viewModel.hasLeader, card: card)
+                        NewDeckListCell(newDeckDict: $viewModel.newDeckDict, 
+                                        libraryTotal: $viewModel.libraryTotal,
+                                        factionTotal: $viewModel.factionTotal,
+                                        leaderCard: $viewModel.leaderCard,
+                                        hasLeader: $viewModel.hasLeader,
+                                        card: card)
                             .alignmentGuide(.listRowSeparatorLeading) { ViewDimensions in
                                 return ViewDimensions[.listRowSeparatorLeading] - 35
                             }
-                        .listRowBackground(Color.gray)
-                        
+                            .listRowBackground(Color.gray)
                     }
                 }
                 .scrollContentBackground(.hidden)
             }
             .navigationTitle("Deck Creator")
             .searchable(text: $searchText, prompt: "Search Cards")
+            .onAppear {
+                if let deck = initialDeck {
+                    // Pre-populate with deck data
+                    viewModel.newDeckDict = deck.card_list ?? [:]
+                    viewModel.leaderCard = deck.deck_leader ?? ""
+                    viewModel.havenCard = deck.deck_haven ?? ""
+                    viewModel.agendaCard = deck.deck_agenda ?? "" 
+                    viewModel.factionTotal = deck.faction_total
+                    viewModel.libraryTotal = deck.library_total
+                }
+            }
         }
     }
 }

@@ -13,7 +13,7 @@ struct AccountView: View {
     
     var settings: [Setting] = [
         .init(name: "Account Settings", iconName: "gear", color: .purple),
-        .init(name: "My Decks", iconName: "lanyardcard", color: .mint)
+//        .init(name: "My Decks", iconName: "lanyardcard", color: .mint)
     ]
     
     

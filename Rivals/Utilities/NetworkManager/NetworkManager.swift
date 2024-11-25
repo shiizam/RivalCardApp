@@ -58,9 +58,20 @@ class NetworkManager: ObservableObject {
                 } else {
                     print("Failed to decode raw data to string.")
                 }
-                return output.data
+                return (data: output.data, response: output.response)
             }
-            .decode(type: responseType, decoder: JSONDecoder())
+            .tryMap { (data: Data, response: URLResponse) -> T in
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    throw URLError(.badServerResponse)
+                }
+                
+                if httpResponse.statusCode == 204 {
+                    // No content to decode
+                    throw URLError(.zeroByteResource)
+                }
+                
+                return try JSONDecoder().decode(responseType, from: data)
+            }
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { result in
                 switch result {
@@ -70,11 +81,61 @@ class NetworkManager: ObservableObject {
                     print("Request failed @NetworkManager. The following error occurred: \(error)")
                     completion(.failure(error))
                 }
-                
             }, receiveValue: { response in
                 completion(.success(response))
             })
     }
+
+    func makeAuthRequestNoResponse(endpoint: String, method: String = "GET", body: [String: Any]? = nil, completion: @escaping (Result<Void, Error>) -> Void) {
+        
+        guard let token = KeychainHelper.shared.get("authToken"), !token.isEmpty else {
+            completion(.failure(URLError(.badURL)))
+            return
+        }
+        
+        guard let request = createAuthenticatedRequest(endpoint: endpoint, method: method, token: token, body: body) else {
+            completion(.failure(URLError(.badURL)))
+            return
+        }
+        
+        cancellable = URLSession.shared.dataTaskPublisher(for: request)
+            .map { output in
+                // Log the raw response data
+                if let jsonString = String(data: output.data, encoding: .utf8) {
+                    print("Raw JSON response: \(jsonString)")
+                } else {
+                    print("Failed to decode raw data to string.")
+                }
+                return (data: output.data, response: output.response)
+            }
+            .tryMap { (data: Data, response: URLResponse) in
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    throw URLError(.badServerResponse)
+                }
+                
+                if httpResponse.statusCode == 204 {
+                    // No content to decode
+                    return
+                }
+                
+                throw URLError(.zeroByteResource)
+            }
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { result in
+                switch result {
+                case .finished:
+                    print("Request successfully made!")
+                case .failure(let error):
+                    print("Request failed @NetworkManager. The following error occurred: \(error)")
+                    completion(.failure(error))
+                }
+            }, receiveValue: { _ in
+                completion(.success(()))
+            })
+    }
+
+
+
     
     // LOGIN REQUEST
     private func createPOSTRequest(username: String, password: String) -> URLRequest? {

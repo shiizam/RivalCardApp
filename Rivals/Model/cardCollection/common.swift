@@ -65,26 +65,71 @@ enum CardSet: String {
     case princePack1        = "Prince Pack 1"
 }
 
-enum Clan: String {
-    case banuHaqim = "banu haqim"
-    case brujah = "brujah"
-    case caitiff = "caitiff"
-    case faithful = "faithful"
-    case gangrel = "gangrel"
-    case hecata = "hecata"
-    case inquisitive = "inquisitive"
-    case lasombra = "lasombra"
-    case malkavian = "malkavian"
-    case minitstry = "ministry"
-    case noseferatu = "nosferatu"
-    case ravnos = "ravnos"
-    case salubri = "salubri"
-    case thinBlood = "thin-blood"
-    case toreador = "toreador"
-    case tremere = "tremere"
-    case tzimisce = "tzimisce"
-    case ventrue = "ventrue"
-}
+//enum Clan: CaseIterable, Identifiable, CustomStringConvertible {
+//    case banuHaqim
+//    case brujah
+//    case caitiff
+//    case faithful
+//    case gangrel
+//    case hecata
+//    case inquisitive
+//    case lasombra
+//    case malkavian
+//    case minitstry
+//    case noseferatu
+//    case ravnos
+//    case salubri
+//    case thinBlood
+//    case toreador
+//    case tremere
+//    case tzimisce
+//    case ventrue
+//    
+//    var id: Self { self }
+//    
+//    var description: String {
+//        switch self {
+//        case .banuHaqim:
+//            return "Banu Haqim"
+//        case .brujah:
+//            return "Brujah"
+//        case .caitiff:
+//            return "Caitiff"
+//        case .faithful:
+//            return "Faithful"
+//        case .gangrel:
+//            return "Gangrel"
+//        case .hecata:
+//            return "Hecata"
+//        case .inquisitive:
+//            return "Inquisitive"
+//        case .lasombra:
+//            return "Lasombra"
+//        case .malkavian:
+//            return "Malkavian"
+//        case .minitstry:
+//            return "Ministry"
+//        case .noseferatu:
+//            return "Noseferatu"
+//        case .ravnos:
+//            return "Ravnos"
+//        case .salubri:
+//            return "Salubri"
+//        case .thinBlood:
+//            return "Thin-blood"
+//        case .toreador:
+//            return "Toreador"
+//        case .tremere:
+//            return "Tremere"
+//        case .tzimisce:
+//            return "Tzimisce"
+//        case .ventrue:
+//            return "Ventrue"
+//        }
+//    }
+//    
+//    
+//}
 
 enum Discipline: String {
     case animalism = "animalism"

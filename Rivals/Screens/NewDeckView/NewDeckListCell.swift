@@ -10,6 +10,8 @@ import SwiftUI
 struct NewDeckListCell: View {
     @State private var copyAmount = 0
     
+//    @EnvironmentObject var viewModel: NewDeckViewModel
+    
     @Binding var newDeckDict: [String: Int]
     @Binding var libraryTotal: Int
     @Binding var factionTotal: Int
@@ -73,11 +75,11 @@ struct NewDeckListCell: View {
                 Spacer()
                 
                 // RIGHT SIDE OF CELL
-                VStack(alignment: .trailing) {
+                VStack(alignment: .center) {
                     
                     if copyAmount < card.copies ?? 1 {
 
-                        //FACTION CARD BUTTON LOGIC
+                        // FACTION CARD BUTTON LOGIC
                         if card.card_stack == "faction" {
                             if hasLeader != true && newDeckDict.contains(where: {$0.key == leaderCard}) {
                                 EmptyLeaderButton()
@@ -96,7 +98,7 @@ struct NewDeckListCell: View {
                             
                             if factionTotal != factionMax {
                                 Text("Deck: \(copyAmount)")
-                                    .foregroundStyle(.white)
+                                    .foregroundStyle(.primary)
                                 
                                 AddCardButton()
                                     .onTapGesture {
@@ -107,7 +109,7 @@ struct NewDeckListCell: View {
                                 
                             } else if card.card_stack == "faction" && factionTotal == factionMax {
                                 Text("Max Reached!")
-                                    .foregroundStyle(.white)
+                                    .foregroundStyle(.primary)
                             }
                             
                         // LIBRARY CARD BUTTON LOGIC
@@ -115,7 +117,7 @@ struct NewDeckListCell: View {
                             if libraryTotal != libraryMax {
                                 
                                 Text("Deck: \(copyAmount)")
-                                    .foregroundStyle(.white)
+                                    .foregroundStyle(.primary)
                                 
                                 AddCardButton()
                                     .onTapGesture {
@@ -139,7 +141,7 @@ struct NewDeckListCell: View {
                                 
                             } else if card.card_stack == "library" && libraryTotal == libraryMax {
                                 Text("Max Reached!")
-                                    .foregroundStyle(.white)
+                                    .foregroundStyle(.primary)
                             }
                         }
                     } else {

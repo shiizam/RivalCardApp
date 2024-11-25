@@ -38,7 +38,8 @@ struct RivalsApp: App {
                 RivalTabView()
                     .environmentObject(appState)
                     .environmentObject(newDeckVM)
-                    .modelContainer(for: [Card.self])
+                    .modelContainer(for: [Card.self, DecksResponseData.self])
+                   
             }
         }
     }

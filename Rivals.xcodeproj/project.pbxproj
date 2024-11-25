@@ -32,25 +32,32 @@
 		BC137EB42B8A98B7009E077E /* UserDeckTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC137EB32B8A98B7009E077E /* UserDeckTitleView.swift */; };
 		BC137EC22B8A9E85009E077E /* CardsHListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC137EC12B8A9E85009E077E /* CardsHListView.swift */; };
 		BC24640D2BAE1EEC003B5751 /* AllCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24640C2BAE1EEC003B5751 /* AllCardsView.swift */; };
+		BC24CEF02C6D5183007035BE /* EditDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24CEEF2C6D5183007035BE /* EditDeckView.swift */; };
 		BC30903E2BB45F1600F4B17F /* AddCardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC30903D2BB45F1600F4B17F /* AddCardButton.swift */; };
 		BC3090422BB4779000F4B17F /* ClanFilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3090412BB4779000F4B17F /* ClanFilterButtonView.swift */; };
 		BC4120652BAF8E640029046D /* NewDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4120642BAF8E630029046D /* NewDeckView.swift */; };
 		BC598C542C5D21910034C0B6 /* UserStateVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC598C532C5D21910034C0B6 /* UserStateVM.swift */; };
+		BC5C823E2C6B9B2800E950FE /* FactionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5C823D2C6B9B2800E950FE /* FactionPicker.swift */; };
 		BC63896F2BB5C1C20031A9CA /* ClanFilterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC63896E2BB5C1C20031A9CA /* ClanFilterListView.swift */; };
 		BC7C78942C5549F4009F9093 /* FilledLeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C78932C5549F4009F9093 /* FilledLeaderButton.swift */; };
 		BC7EB4312C66623A009C56F4 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EB4302C66623A009C56F4 /* DeckView.swift */; };
 		BC7EB4362C6692F9009C56F4 /* NewDeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EB4352C6692F9009C56F4 /* NewDeckViewModel.swift */; };
+		BC91F6292C6BA08C00E4200C /* ClanPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC91F6282C6BA08C00E4200C /* ClanPicker.swift */; };
+		BC91F62B2C6BA90300E4200C /* DeckPickerEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC91F62A2C6BA90300E4200C /* DeckPickerEnums.swift */; };
 		BC9588E22C5EBC0F00997A96 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9588E12C5EBC0F00997A96 /* RegisterView.swift */; };
 		BC9588E42C5EC36E00997A96 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9588E32C5EC36E00997A96 /* LoginButton.swift */; };
-		BCA2CD772C5E99BA007B5992 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA2CD762C5E99BA007B5992 /* HomeView.swift */; };
 		BCA2CD792C5EB203007B5992 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA2CD782C5EB203007B5992 /* LoginView.swift */; };
 		BCAA1AC72BB7445F006EB789 /* NewDeckListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAA1AC62BB7445F006EB789 /* NewDeckListCell.swift */; };
 		BCAA1AC92BB7489C006EB789 /* RemoveCardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAA1AC82BB7489C006EB789 /* RemoveCardButton.swift */; };
 		BCBB5A7D2BA39E3D0092D8F6 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB5A7C2BA39E3D0092D8F6 /* Card.swift */; };
 		BCC82EE52B9955E100D0B0AB /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC82EE42B9955E100D0B0AB /* common.swift */; };
-		BCE50ABD2C650415007148E0 /* DecksResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE50ABC2C650415007148E0 /* DecksResponseData.swift */; };
+		BCCD23472CB9B77100509593 /* DecksResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCD23462CB9B77100509593 /* DecksResponseData.swift */; };
+		BCCD23492CBAE36E00509593 /* AllCardsSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCD23482CBAE36E00509593 /* AllCardsSheetView.swift */; };
+		BCE50ABD2C650415007148E0 /* DecksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE50ABC2C650415007148E0 /* DecksResponse.swift */; };
+		BCE9A42D2C693A38007ED2DF /* DeckCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE9A42C2C693A38007ED2DF /* DeckCellView.swift */; };
 		BCEAA3762BB31EF0004114B2 /* CardCopyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEAA3752BB31EF0004114B2 /* CardCopyPicker.swift */; };
 		BCEAA3782BB3244F004114B2 /* SingleCopyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEAA3772BB3244F004114B2 /* SingleCopyPicker.swift */; };
+		BCEBBFE42CB5B7B000DDB78A /* EditCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEBBFE32CB5B7B000DDB78A /* EditCellView.swift */; };
 		BCEBD19D2C5BE15700E878D0 /* EmptyLeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEBD19C2C5BE15700E878D0 /* EmptyLeaderButton.swift */; };
 		BCF889872C58226000B48F22 /* postDeckRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF889862C58226000B48F22 /* postDeckRequest.swift */; };
 		BCF8898A2C58373B00B48F22 /* NameDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF889892C58373B00B48F22 /* NameDeckView.swift */; };
@@ -106,25 +113,32 @@
 		BC137EB32B8A98B7009E077E /* UserDeckTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeckTitleView.swift; sourceTree = "<group>"; };
 		BC137EC12B8A9E85009E077E /* CardsHListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsHListView.swift; sourceTree = "<group>"; };
 		BC24640C2BAE1EEC003B5751 /* AllCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCardsView.swift; sourceTree = "<group>"; };
+		BC24CEEF2C6D5183007035BE /* EditDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDeckView.swift; sourceTree = "<group>"; };
 		BC30903D2BB45F1600F4B17F /* AddCardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardButton.swift; sourceTree = "<group>"; };
 		BC3090412BB4779000F4B17F /* ClanFilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanFilterButtonView.swift; sourceTree = "<group>"; };
 		BC4120642BAF8E630029046D /* NewDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeckView.swift; sourceTree = "<group>"; };
 		BC598C532C5D21910034C0B6 /* UserStateVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStateVM.swift; sourceTree = "<group>"; };
+		BC5C823D2C6B9B2800E950FE /* FactionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactionPicker.swift; sourceTree = "<group>"; };
 		BC63896E2BB5C1C20031A9CA /* ClanFilterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanFilterListView.swift; sourceTree = "<group>"; };
 		BC7C78932C5549F4009F9093 /* FilledLeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledLeaderButton.swift; sourceTree = "<group>"; };
 		BC7EB4302C66623A009C56F4 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		BC7EB4352C6692F9009C56F4 /* NewDeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeckViewModel.swift; sourceTree = "<group>"; };
+		BC91F6282C6BA08C00E4200C /* ClanPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanPicker.swift; sourceTree = "<group>"; };
+		BC91F62A2C6BA90300E4200C /* DeckPickerEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckPickerEnums.swift; sourceTree = "<group>"; };
 		BC9588E12C5EBC0F00997A96 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		BC9588E32C5EC36E00997A96 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
-		BCA2CD762C5E99BA007B5992 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BCA2CD782C5EB203007B5992 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BCAA1AC62BB7445F006EB789 /* NewDeckListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeckListCell.swift; sourceTree = "<group>"; };
 		BCAA1AC82BB7489C006EB789 /* RemoveCardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveCardButton.swift; sourceTree = "<group>"; };
 		BCBB5A7C2BA39E3D0092D8F6 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		BCC82EE42B9955E100D0B0AB /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
-		BCE50ABC2C650415007148E0 /* DecksResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksResponseData.swift; sourceTree = "<group>"; };
+		BCCD23462CB9B77100509593 /* DecksResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksResponseData.swift; sourceTree = "<group>"; };
+		BCCD23482CBAE36E00509593 /* AllCardsSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCardsSheetView.swift; sourceTree = "<group>"; };
+		BCE50ABC2C650415007148E0 /* DecksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksResponse.swift; sourceTree = "<group>"; };
+		BCE9A42C2C693A38007ED2DF /* DeckCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCellView.swift; sourceTree = "<group>"; };
 		BCEAA3752BB31EF0004114B2 /* CardCopyPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCopyPicker.swift; sourceTree = "<group>"; };
 		BCEAA3772BB3244F004114B2 /* SingleCopyPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCopyPicker.swift; sourceTree = "<group>"; };
+		BCEBBFE32CB5B7B000DDB78A /* EditCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCellView.swift; sourceTree = "<group>"; };
 		BCEBD19C2C5BE15700E878D0 /* EmptyLeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyLeaderButton.swift; sourceTree = "<group>"; };
 		BCF889862C58226000B48F22 /* postDeckRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postDeckRequest.swift; sourceTree = "<group>"; };
 		BCF889892C58373B00B48F22 /* NameDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameDeckView.swift; sourceTree = "<group>"; };
@@ -228,9 +242,9 @@
 		BC137EB52B8A9CCE009E077E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				BC24CEEE2C6D516F007035BE /* EditDeckView */,
 				BC7EB42F2C66622A009C56F4 /* DeckView */,
 				BC9588E02C5EBBFF00997A96 /* RegisterView */,
-				BCA2CD752C5E99AB007B5992 /* HomeView */,
 				BCA2CD6E2C5E9752007B5992 /* AuthViews */,
 				BC4120632BAF8E500029046D /* NewDeckView */,
 				BC137EB82B8A9D19009E077E /* AccountView */,
@@ -317,7 +331,9 @@
 				BC137EA72B8A9618009E077E /* User.swift */,
 				BCBB5A7C2BA39E3D0092D8F6 /* Card.swift */,
 				BCF8A6482C617382007C2E63 /* LoginResponseData.swift */,
-				BCE50ABC2C650415007148E0 /* DecksResponseData.swift */,
+				BCE50ABC2C650415007148E0 /* DecksResponse.swift */,
+				BC91F62A2C6BA90300E4200C /* DeckPickerEnums.swift */,
+				BCCD23462CB9B77100509593 /* DecksResponseData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,6 +369,15 @@
 			path = Background;
 			sourceTree = "<group>";
 		};
+		BC24CEEE2C6D516F007035BE /* EditDeckView */ = {
+			isa = PBXGroup;
+			children = (
+				BC24CEEF2C6D5183007035BE /* EditDeckView.swift */,
+				BCEBBFE32CB5B7B000DDB78A /* EditCellView.swift */,
+			);
+			path = EditDeckView;
+			sourceTree = "<group>";
+		};
 		BC4120632BAF8E500029046D /* NewDeckView */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				BC7EB4302C66623A009C56F4 /* DeckView.swift */,
+				BCE9A42C2C693A38007ED2DF /* DeckCellView.swift */,
 			);
 			path = DeckView;
 			sourceTree = "<group>";
@@ -377,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				BCF889892C58373B00B48F22 /* NameDeckView.swift */,
+				BCCD23482CBAE36E00509593 /* AllCardsSheetView.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -395,14 +422,6 @@
 				BC137EB92B8A9D26009E077E /* LoginView */,
 			);
 			path = AuthViews;
-			sourceTree = "<group>";
-		};
-		BCA2CD752C5E99AB007B5992 /* HomeView */ = {
-			isa = PBXGroup;
-			children = (
-				BCA2CD762C5E99BA007B5992 /* HomeView.swift */,
-			);
-			path = HomeView;
 			sourceTree = "<group>";
 		};
 		BCBB5A7E2BA3A7430092D8F6 /* API */ = {
@@ -427,6 +446,8 @@
 			children = (
 				BCEAA3752BB31EF0004114B2 /* CardCopyPicker.swift */,
 				BCEAA3772BB3244F004114B2 /* SingleCopyPicker.swift */,
+				BC5C823D2C6B9B2800E950FE /* FactionPicker.swift */,
+				BC91F6282C6BA08C00E4200C /* ClanPicker.swift */,
 			);
 			path = Pickers;
 			sourceTree = "<group>";
@@ -594,12 +615,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCAA1AC72BB7445F006EB789 /* NewDeckListCell.swift in Sources */,
+				BCCD23472CB9B77100509593 /* DecksResponseData.swift in Sources */,
 				BCA2CD792C5EB203007B5992 /* LoginView.swift in Sources */,
 				BC9588E22C5EBC0F00997A96 /* RegisterView.swift in Sources */,
+				BCCD23492CBAE36E00509593 /* AllCardsSheetView.swift in Sources */,
 				BC1289372C5FFCC8007E422E /* AccountView.swift in Sources */,
 				BC7EB4312C66623A009C56F4 /* DeckView.swift in Sources */,
 				BC137EA22B8A9003009E077E /* NewDeckButton.swift in Sources */,
 				BCBB5A7D2BA39E3D0092D8F6 /* Card.swift in Sources */,
+				BCE9A42D2C693A38007ED2DF /* DeckCellView.swift in Sources */,
 				BC137EB02B8A982A009E077E /* UserDecksView.swift in Sources */,
 				BCF8A6492C617382007C2E63 /* LoginResponseData.swift in Sources */,
 				BCF8A6532C62BA21007C2E63 /* InputPlaceholder+Ext.swift in Sources */,
@@ -611,22 +635,25 @@
 				BC7EB4362C6692F9009C56F4 /* NewDeckViewModel.swift in Sources */,
 				BCF889872C58226000B48F22 /* postDeckRequest.swift in Sources */,
 				BCEAA3762BB31EF0004114B2 /* CardCopyPicker.swift in Sources */,
-				BCA2CD772C5E99BA007B5992 /* HomeView.swift in Sources */,
-				BCE50ABD2C650415007148E0 /* DecksResponseData.swift in Sources */,
+				BCE50ABD2C650415007148E0 /* DecksResponse.swift in Sources */,
 				BCF8898A2C58373B00B48F22 /* NameDeckView.swift in Sources */,
+				BC91F6292C6BA08C00E4200C /* ClanPicker.swift in Sources */,
 				BC137EB42B8A98B7009E077E /* UserDeckTitleView.swift in Sources */,
 				BCEBD19D2C5BE15700E878D0 /* EmptyLeaderButton.swift in Sources */,
 				BC598C542C5D21910034C0B6 /* UserStateVM.swift in Sources */,
 				BC137EC22B8A9E85009E077E /* CardsHListView.swift in Sources */,
+				BCEBBFE42CB5B7B000DDB78A /* EditCellView.swift in Sources */,
 				BC63896F2BB5C1C20031A9CA /* ClanFilterListView.swift in Sources */,
 				BC24640D2BAE1EEC003B5751 /* AllCardsView.swift in Sources */,
 				BCF8A64B2C61744A007C2E63 /* NetworkManager.swift in Sources */,
+				BC91F62B2C6BA90300E4200C /* DeckPickerEnums.swift in Sources */,
 				BC137EAC2B8A9681009E077E /* RivalsError.swift in Sources */,
 				BCC82EE52B9955E100D0B0AB /* common.swift in Sources */,
 				BC137E692B8A8363009E077E /* RivalTabView.swift in Sources */,
 				BCF8A6582C62C1A1007C2E63 /* TabBar+Ext.swift in Sources */,
 				BC137EB22B8A9848009E077E /* UserDecksViewModel.swift in Sources */,
 				BC137EA62B8A9530009E077E /* AccountViewModel.swift in Sources */,
+				BC5C823E2C6B9B2800E950FE /* FactionPicker.swift in Sources */,
 				BC3090422BB4779000F4B17F /* ClanFilterButtonView.swift in Sources */,
 				BC137EA42B8A90DF009E077E /* Color+Ext.swift in Sources */,
 				BC9588E42C5EC36E00997A96 /* LoginButton.swift in Sources */,
@@ -634,6 +661,7 @@
 				BC4120652BAF8E640029046D /* NewDeckView.swift in Sources */,
 				BC137E9A2B8A8ACC009E077E /* ClansGridViewModel.swift in Sources */,
 				BC7C78942C5549F4009F9093 /* FilledLeaderButton.swift in Sources */,
+				BC24CEF02C6D5183007035BE /* EditDeckView.swift in Sources */,
 				BCF8A6512C62784F007C2E63 /* AppState.swift in Sources */,
 				BC137EAA2B8A9658009E077E /* Alert.swift in Sources */,
 				BC137EA82B8A9618009E077E /* User.swift in Sources */,

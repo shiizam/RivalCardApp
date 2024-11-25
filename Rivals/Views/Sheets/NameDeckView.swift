@@ -13,6 +13,7 @@ struct NameDeckView: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var viewModel: NewDeckViewModel
     @Environment(\.dismiss) var dismiss
+
     
     var body: some View {
             
@@ -21,45 +22,56 @@ struct NameDeckView: View {
                 .font(.title).bold()
                 .padding(.bottom, 20)
             
-            HStack {
-                VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .listRowSeparatorLeading) {
+                VStack(alignment: .leading, spacing: 5) {
                     Text("New Deck Name:")
                         .frame(alignment: .leading)
                         .font(.callout)
-                        .foregroundStyle(.black)
+                        .foregroundStyle(.primary)
                         .padding(.leading)
                     
                     TextField("Enter name...", text: $viewModel.deckName)
-                        .frame(width: 200, height: 35)
+                        .frame(width: 245, height: 50)
                         .textFieldStyle(.roundedBorder)
                         .textInputAutocapitalization(.never)
                         .disableAutocorrection(true)
                         .padding([.leading, .trailing])
                 }
-                    
-                VStack(alignment: .leading, spacing: 10) {
-                    
-                    Text("Hunter Deck?")
-                        .font(.callout)
-                        .foregroundStyle(.black)
                 
-                    Toggle("", isOn: $viewModel.isHunter)
-                        .tint(.bloodRed)
-                        .labelsHidden()
-                        
+                HStack{
+                    FactionPicker()
+                    
+                    if viewModel.factionSelection == .vampire {
+                        ClanPicker()
+                    }
                 }
+                
+                
+                    
+//                HStack {
+//                    
+//                    Text("Hunter Deck?")
+//                        .font(.callout)
+//                        .foregroundStyle(.primary)
+//                
+//                    Toggle("", isOn: $viewModel.isHunter)
+//                        .tint(.bloodRed)
+//                        .labelsHidden()
+//                        
+//                }
+//                .padding(.bottom, 10)
             }
             
             HStack {
                 Button {
-                    viewModel.saveDeck(deckName: viewModel.deckName, newDeckDict: viewModel.newDeckDict, leaderName: viewModel.leaderCard)
+                    viewModel.saveDeck()
                     viewModel.showSaveDeck.toggle()
                 } label: {
                     Text("Save")
                         .frame(width: 100)
                         .padding()
                         .background(.blue)
-                        .foregroundColor(.white)
+                        .foregroundColor(.primary)
                         .cornerRadius(10)
                 }
                 

@@ -11,7 +11,7 @@ struct EmptyLeaderButton: View {
     var body: some View {
         Image(systemName: "star")
             .resizable()
-            .frame(width: 40, height: 35)
+            .frame(width: 30, height: 25)
     }
 }
 

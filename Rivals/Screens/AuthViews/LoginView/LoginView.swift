@@ -22,23 +22,23 @@ struct LoginView: View {
                     .resizable()
                     .scaledToFill()
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-//                    .offset(x: 110)
+                    .offset(x: 110)
                 
                 VStack(spacing: 20) {
                         
                     Text("VTM: Rivals")
                         .font(.system(size: 40, weight: .bold))
-                        .foregroundColor(.white)
+                        .foregroundColor(.primary)
                         .offset(x: -70, y: -100)
                     
                     TextField("Username", text: self.$username)
-                        .foregroundColor(.black)
+                        .foregroundColor(.primary)
                         .textInputAutocapitalization(.never)
                         .autocorrectionDisabled()
                         .textFieldStyle(.roundedBorder)
                         .placeholder(when: username.isEmpty) {
                             Text("Username")
-                                .foregroundColor(.white)
+                                .foregroundColor(.primary)
                                 .bold()
                         }
                     
@@ -47,13 +47,13 @@ struct LoginView: View {
                         .foregroundColor(.white)
                     
                     SecureField("Password", text: self.$password)
-                        .foregroundColor(.black)
+                        .foregroundColor(.primary)
                         .textInputAutocapitalization(.never)
                         .autocorrectionDisabled()
                         .textFieldStyle(.roundedBorder)
                         .placeholder(when: password.isEmpty) {
                             Text("Password")
-                                .foregroundColor(.white)
+                                .foregroundColor(.primary)
                                 .bold()
                         }
                         

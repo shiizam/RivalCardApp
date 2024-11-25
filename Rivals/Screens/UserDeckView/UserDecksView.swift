@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserDecksView: View {
     
-
+    
     @EnvironmentObject var appState: AppState
     @StateObject private var viewModel: UserDecksViewModel
     
@@ -25,85 +25,88 @@ struct UserDecksView: View {
                 BackgroundView()
                 
                 List {
-                    ForEach(viewModel.decks, id: \.id) { deck in
-                        NavigationLink(destination: DeckView(deck: deck)) {
-                            
-                            if deck.hunter_deck {
-                                Image(systemName: "cross.fill")
-                            } else {
-                                Image(systemName: "drop.fill")
-                                    .foregroundStyle(.red)
-                            }
-                            
-                            Text(deck.deck_name)
-                                .font(.title3)
-                                .foregroundColor(.mint)
-                        }
-                        
+                    ForEach(viewModel.sections) { section in
+                        createFactionSection(section)
                     }
                 }
-               
-//                ScrollView {
-             
-//                    LazyVGrid(columns: viewModel.columns) {
-//                        ForEach(viewModel.decks) { deck in
-//                            UserDecksTitleView(deck: deck)
-//                                .onTapGesture {
-//                                    print("tapped")
-//                                }
-//                        }
-//                    }
-//                    Button {
-//                        print("tapped")
-//                    } label: {
-//                        NewDeckButton(buttonText: "Create New Deck", buttonColor: Color.gray)
-//                    }
-//                }
+                .scrollContentBackground(.hidden)
+                
             }
-            .scrollContentBackground(.hidden)
             .navigationTitle("My Decks")
             .onAppear {
                 Task {
                     await viewModel.loadDecks()
-                    print(viewModel.decks)
+                    // TODO: DELETE PRINT STATEMENT BEFORE PRODUCTION
+//                    print("Decks after load: \(viewModel.decks)")
+                    
                 }
             }
-            .toolbar {
-                ToolbarItem {
-                    Menu(content: {
-                        Text("TEST")
-                    }, label: {
-                        Image(systemName: "plus.circle")
-                    })
+        }
+    }
+    
+    
+    private func createFactionSection(_ section: FactionSection) -> some View {
+        Section(header: Text(section.faction.description)) {
+            // If the section has clans, create a section for each clan
+            if !section.clans.isEmpty {
+                ForEach(section.clans) { clanSection in
+                    createClanSection(clanSection)
+                }
+            } else {
+                // Handle the Hunter faction case with no clans
+                VStack {
+                    ForEach(section.clans.first?.decks ?? []) { deck in
+                        NavigationLink(destination: EditDeckView(deck: deck)) {
+                            // Conditionally display images based on the deck type
+                            if deck.hunter_deck {
+                                Image(systemName: "cross.fill")
+                                    .foregroundStyle(.blue) // Change color or style if needed
+                            } else {
+                                Image(systemName: "drop.fill")
+                                    .foregroundStyle(.red)
+                            }
+                            Text(deck.deck_name)
+                                .font(.title3)
+                                .foregroundColor(.mint)
+                        }
+                    }
+                    .onDelete { indexSet in
+                        Task {
+                            for index in indexSet {
+                                let deck = section.clans.first?.decks[index]
+                                if let deckId = deck?.id {
+                                    await viewModel.deckToDelete(deckId: deckId)
+                                }
+                            }
+                        }
+                    }
                 }
             }
-            
+        }
+    }
+    
+    private func createClanSection(_ section: ClanSection) -> some View {
+        Section(header: section.clan == .none ? nil : Text(section.clan.description)) {
+            ForEach(section.decks) { deck in
+                NavigationLink(destination: EditDeckView(deck: deck)) {
+                    HStack {
+                        // Use deck.faction to determine the image
+                        Image(systemName: deck.deck_faction == "hunter" ? "cross.fill" : "drop.fill")
+                            .foregroundStyle(deck.deck_faction == "hunter" ? .blue : .red)
+                        Text(deck.deck_name)
+                            .font(.title3)
+                            .foregroundColor(.mint)
+                    }
+                }
+            }
+            .onDelete { indexSet in
+                Task {
+                    for index in indexSet {
+                        let deck = section.decks[index]
+                        await viewModel.deckToDelete(deckId: deck.id)
+                    }
+                }
+            }
         }
     }
 }
-
-
-//struct UserDeck: Hashable, Identifiable {
-//    let id = UUID()
-//    let name: String
-//    let cardTotal: String
-//    let deckLogo: String
-//}
-//
-//
-//struct UserDeckData {
-//    static let sampleUserDeck = UserDeck(name: "MyBrujahDeck", cardTotal: "10", deckLogo: "logo")
-//    
-//    static let userDecks = [
-//        UserDeck(name: "MyFirstDeck", cardTotal: "10", deckLogo: "vtm-bg"),
-//        UserDeck(name: "MyBrujahDeck", cardTotal: "10", deckLogo: "vtm-bg"),
-//        UserDeck(name: "MyThinBloodDeck", cardTotal: "10", deckLogo: "vtm-bg"),
-//        UserDeck(name: "MyTremereDeck", cardTotal: "10", deckLogo: "vtm-bg"),
-//        UserDeck(name: "MyVentrueDeck", cardTotal: "10", deckLogo: "vtm-bg"),
-//    ]
-//    
-//}
-
-//#Preview {
-//    UserDecksView()
-//}
