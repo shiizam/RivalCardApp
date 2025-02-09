@@ -13,8 +13,6 @@ import SwiftData
 // Struct for Coding & Decoding JSON data from API call
 @Model
 class Card: Codable, Identifiable, ObservableObject {
-   
-      
     
     @Attribute(.unique)
     var id: String
@@ -105,4 +103,13 @@ class Card: Codable, Identifiable, ObservableObject {
     }
 }
 
+// NEEDED TO HASH CARDS IN THE EDITDECKVIEW
+extension Card: Hashable {
+    static func == (lhs: Card, rhs: Card) -> Bool {
+        return lhs.id == rhs.id
+    }
 
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}

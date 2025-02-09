@@ -11,7 +11,7 @@ import SwiftData
 struct NewDeckView: View {
     
     // Variables for NewDeckView
-    @Environment(\.modelContext) private var modelContext
+    @Environment(\.modelContext) private var modelContext // TODO: Is this even needed??
     @EnvironmentObject var viewModel: NewDeckViewModel
     @Query(sort: \Card.id) private var cards: [Card]
     
@@ -19,6 +19,7 @@ struct NewDeckView: View {
     @State private var showSaveDeck = false
     @State private var showClanFilter = false
     @State private var showSaveButton = false
+    @State private var showMyDeckSheet = false
     
     
     // Search bar functionallity
@@ -35,13 +36,9 @@ struct NewDeckView: View {
         }
     }
     
-    
-    var initialDeck: DecksResponseData?
         
-    
     // Change Navigation Title font color, Search Bar Background color and font colors
-    init(initialDeck: DecksResponseData? = nil) {
-        self.initialDeck = initialDeck
+    init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.label]
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .systemBackground
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .label
@@ -58,39 +55,8 @@ struct NewDeckView: View {
                 
                 //  STACK HOLDING DECK CARD COUNTS; FactionTotal, LibrayTotal...
                 VStack {
-                    HStack {
-                        
-                        Text("Faction Cards: \(viewModel.factionTotal)/7")
-                            .font(.headline)
-                            .foregroundStyle(.primary)
-                        
-                        Text("Library Cards:\(viewModel.libraryTotal)/40")
-                            .font(.headline)
-                            .foregroundStyle(.primary)
-                    }
                     
-                    HStack {
-                        Text("Leader: ")
-                            .font(.subheadline)
-                            .foregroundStyle(.primary)
-                        Text(viewModel.leaderCard)
-                            .font(.caption)
-                            .foregroundStyle(.primary)
-                        
-                        Text("Haven: ")
-                            .font(.subheadline)
-                            .foregroundStyle(.primary)
-                        Text(viewModel.havenCard)
-                            .font(.caption)
-                            .foregroundStyle(.primary)
-                        
-                        Text("Agenda: ")
-                            .font(.subheadline)
-                            .foregroundStyle(.primary)
-                        Text(viewModel.agendaCard)
-                            .font(.caption)
-                            .foregroundStyle(.primary)
-                    }
+                    DeckInfoView(factionTotal: viewModel.factionTotal, libraryTotal: viewModel.libraryTotal, leaderCard: viewModel.leaderCard, havenCard: viewModel.havenCard, agendaCard: viewModel.agendaCard)
                     
                     VStack(spacing: .none) {
                         HStack {
@@ -115,7 +81,7 @@ struct NewDeckView: View {
                             if viewModel.newDeckDict.isEmpty != true {
                                 // ALL CURRENT CARDS IN NEW DECK BUTTON
                                 Button {
-                                    print("This will show the view of all the cards in the current new deck")
+                                    showMyDeckSheet.toggle()
                                 } label: {
                                     Text("Deck Cards")
                                         .frame(width: 140, height: 35)
@@ -150,34 +116,91 @@ struct NewDeckView: View {
                             }
                         }
                     }
-                    
+                    // TODO: Create a allcardscell view 
                     List(filteredCards, id: \.self) { card in
-                        NewDeckListCell(newDeckDict: $viewModel.newDeckDict, 
-                                        libraryTotal: $viewModel.libraryTotal,
-                                        factionTotal: $viewModel.factionTotal,
-                                        leaderCard: $viewModel.leaderCard,
-                                        hasLeader: $viewModel.hasLeader,
-                                        card: card)
-                            .alignmentGuide(.listRowSeparatorLeading) { ViewDimensions in
-                                return ViewDimensions[.listRowSeparatorLeading] - 35
+                        HStack {
+                            AsyncImage(url: URL(string: card.imageURL)) { image in
+                                image
+                                    .resizable()
+                            } placeholder: {
+                                Text("Loading...")
+                                    .foregroundStyle(.white)
                             }
-                            .listRowBackground(Color.gray)
+                            .frame(width: 100, height: 150)
+                            
+                            VStack(alignment: .leading) {
+                                
+                                Text(card.name)
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                
+                                if card.clan == nil {
+                                    Text("Faction: None")
+                                        .font(.caption)
+                                        .fontWeight(.medium)
+                                } else {
+                                    Text("Faction: \(card.clan!)")
+                                        .font(.caption)
+                                        .fontWeight(.medium)
+                                }
+                                Text("Max Copies: \(card.copies ?? 1) ")
+                                    .font(.caption)
+                                    .fontWeight(.medium)
+                                
+                                Text("Card Set: \(card.card_set)")
+                                    .font(.caption)
+                                    .fontWeight(.medium)
+                                
+                                Text("Card Stack: \(card.card_stack.capitalized)")
+                                    .font(.caption)
+                                    .fontWeight(.medium)
+                                
+                                if card.card_type == ["attack"] || card.card_type == ["reaction"] {
+                                    ForEach(card.card_type, id: \.self) { type in
+                                        Text("Type: \(type!.capitalized)")
+                                            .font(.caption)
+                                            .fontWeight(.medium)
+                                    }
+                                }
+                            }
+                            Spacer()
+                            
+                            if (viewModel.newDeckDict[card.name] ?? 0) < 1 {
+                                Button("Add") {
+                                    viewModel.newDeckDict[card.name] = 1
+                                    if (card.card_stack == "faction") {
+                                        viewModel.factionTotal += 1
+                                    } else {
+                                        viewModel.libraryTotal += 1
+                                    }
+                                }
+                                .buttonStyle(.bordered)
+                                
+                            }
+                        }
                     }
+                    .scrollContentBackground(.hidden)
+                    
+                    //                    List(filteredCards, id: \.self) { card in
+                    //                        NewDeckListCell(newDeckDict: $viewModel.newDeckDict,
+                    //                                        libraryTotal: $viewModel.libraryTotal,
+                    //                                        factionTotal: $viewModel.factionTotal,
+                    //                                        leaderCard: $viewModel.leaderCard,
+                    //                                        hasLeader: $viewModel.hasLeader,
+                    //                                        card: card)
+                    //                            .alignmentGuide(.listRowSeparatorLeading) { ViewDimensions in
+                    //                                return ViewDimensions[.listRowSeparatorLeading] - 35
+                    //                            }
+                    //                            .listRowBackground(Color.gray)
+                    //                    }
+                    //                }
+                    //                .scrollContentBackground(.hidden)
                 }
-                .scrollContentBackground(.hidden)
             }
             .navigationTitle("Deck Creator")
             .searchable(text: $searchText, prompt: "Search Cards")
-            .onAppear {
-                if let deck = initialDeck {
-                    // Pre-populate with deck data
-                    viewModel.newDeckDict = deck.card_list ?? [:]
-                    viewModel.leaderCard = deck.deck_leader ?? ""
-                    viewModel.havenCard = deck.deck_haven ?? ""
-                    viewModel.agendaCard = deck.deck_agenda ?? "" 
-                    viewModel.factionTotal = deck.faction_total
-                    viewModel.libraryTotal = deck.library_total
-                }
+            .sheet(isPresented: $showMyDeckSheet) {
+                CurrentDeckSheetView(viewModel: viewModel, cards: cards)
             }
         }
     }

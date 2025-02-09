@@ -13,12 +13,20 @@ struct NameDeckView: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var viewModel: NewDeckViewModel
     @Environment(\.dismiss) var dismiss
-
+    
+    var deck: DecksResponseData?
+    
+   
+    
+    init(deck: DecksResponseData? = nil) {
+        self.deck = deck
+        
+    }
     
     var body: some View {
             
         VStack {
-           Text("Save New Deck")
+            Text( "Save New Deck" )
                 .font(.title).bold()
                 .padding(.bottom, 20)
             
@@ -36,6 +44,7 @@ struct NameDeckView: View {
                         .textInputAutocapitalization(.never)
                         .disableAutocorrection(true)
                         .padding([.leading, .trailing])
+                        
                 }
                 
                 HStack{
@@ -64,10 +73,12 @@ struct NameDeckView: View {
             
             HStack {
                 Button {
-                    viewModel.saveDeck()
+
+                        viewModel.saveDeck()
+                    
                     viewModel.showSaveDeck.toggle()
                 } label: {
-                    Text("Save")
+                    Text(deck == nil ? "Save" : "Update")
                         .frame(width: 100)
                         .padding()
                         .background(.blue)

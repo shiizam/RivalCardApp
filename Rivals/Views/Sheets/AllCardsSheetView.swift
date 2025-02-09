@@ -9,22 +9,14 @@ import SwiftUI
 import SwiftData
 
 struct AllCardsSheetView: View {
-    
-    @Binding var cardList: [String: Int]
-    @ObservedObject var deck: DecksResponseData
-    
-    @Query(sort: \Card.id) private var cards: [Card]
-    
-    // Temp Variables to hold changes before saving
-    @State private var currLeader: String
-    @State private var currAgenda: String
-    @State private var currHaven: String
-    
+    @ObservedObject var viewModel: NewDeckViewModel
+//    @Query(sort: \Card.id) private var cards: [Card]
+    var cards: [Card]
     
     
     // Search bar functionallity
     @State private var searchText: String = ""
-    @State private var deckCardIDs: Set<String> = []
+//    @State private var deckCardIDs: Set<String> = []
     
     var filteredCards: [Card] {
         guard !searchText.isEmpty else { return cards }
@@ -37,73 +29,87 @@ struct AllCardsSheetView: View {
     }
     
     
-    init(deck: DecksResponseData, cardList: Binding<[String: Int]>) {
-        self.deck = deck
-        self._cardList = cardList
-        _currAgenda = State(initialValue: deck.deck_agenda ?? "")
-        _currHaven = State(initialValue: deck.deck_haven ?? "")
-        _currLeader = State(initialValue: deck.deck_leader ?? "")
-//        _cardList = State(initialValue: deck.card_list ?? [:])
-    }
-    
-    
     var body: some View {
         NavigationStack {
             ZStack {
                 BackgroundView()
                 
-                List(filteredCards, id: \.id) { card in
-                    HStack(alignment: .center) {
-                        
-                        
-                        VStack(alignment: .leading) {
-                            
-                            Text(card.name)
-                                .font(.title3)
-                                .fontWeight(.medium)
-                                .foregroundStyle(.white)
-                            
-                            AsyncImage(url: URL(string: card.imageURL)) { image in
-                                image
-                                    .resizable()
-                                    .cornerRadius(10)
-                            } placeholder: {
-                                
-                                Rectangle()
-                                    .foregroundStyle(.secondary)
-                            }
-                            .frame(width: 60, height: 100)
-                            
+                // Searchable Card List (to add new cards)
+                    TextField("Search Cards", text: $searchText)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+                
+                    Spacer()
+                
+                    List(filteredCards, id: \.self) { card in
+                        AllCardsListCell(card: card)
+//                        HStack {
+//                            AsyncImage(url: URL(string: card.imageURL)) { image in
+//                                image
+//                                    .resizable()
+//                            } placeholder: {
+//                                Text("Loading...")
+//                                    .foregroundStyle(.white)
+//                            }
+//                            .frame(width: 100, height: 150)
+//                            
+//                            VStack(alignment: .leading) {
+//                                
+//                                Text(card.name)
+//                                    .font(.title3)
+//                                    .fontWeight(.bold)
+//                                
+//                                if card.clan == nil {
+//                                    Text("Faction: None")
+//                                        .font(.caption)
+//                                        .fontWeight(.medium)
+//                                } else {
+//                                    Text("Faction: \(card.clan!)")
+//                                        .font(.caption)
+//                                        .fontWeight(.medium)
+//                                }
+//                                Text("Max Copies: \(card.copies ?? 1) ")
+//                                    .font(.caption)
+//                                    .fontWeight(.medium)
+//                                
+//                                Text("Card Set: \(card.card_set)")
+//                                    .font(.caption)
+//                                    .fontWeight(.medium)
+//                                
+//                                Text("Card Stack: \(card.card_stack.capitalized)")
+//                                    .font(.caption)
+//                                    .fontWeight(.medium)
+//                                                   
+//                                if card.card_type == ["attack"] || card.card_type == ["reaction"] {
+//                                    ForEach(card.card_type, id: \.self) { type in
+//                                        Text("Type: \(type!.capitalized)")
+//                                            .font(.caption)
+//                                            .fontWeight(.medium)
+//                                    }
+//                                }
+//                            }
+                            Spacer()
 
-                            
-                        }
-                        
-                        Spacer()
-                        
-                        VStack(alignment: .center) {
-                            
-                            Text("Qty: \(cardList[card.name, default: 0])")
-                                .font(.headline)
-                                .frame(alignment: .topLeading)
-                                .multilineTextAlignment(.leading)
-                            
-                            // Stepper Counter for cards
-                            Stepper(value: Binding(get: {
-                                cardList[card.name, default: 0]
-                            }, set: { newValue in
-                                cardList[card.name] = newValue
-                            }), in: rangeForCard(card.name, cardType: card.card_stack)) {
-                                EmptyView()
+                            if (viewModel.newDeckDict[card.name] ?? 0) < 1 {
+                                Button("Add") {
+                                    viewModel.newDeckDict[card.name] = 1
+                                    if (card.card_stack == "faction") {
+                                        viewModel.factionTotal += 1
+                                    } else {
+                                        viewModel.libraryTotal += 1
+                                    }
+                                }
+                                .buttonStyle(.bordered)
+                                
                             }
-                            .frame(width: 100, height: 30)
-                        }
+//                        }
                     }
+                    .scrollContentBackground(.hidden)
                 }
             }
             .navigationTitle("Add Cards")
             .searchable(text: $searchText, prompt: "Search Cards")
             .frame(maxWidth: .infinity)
-        }
     }
         
 }

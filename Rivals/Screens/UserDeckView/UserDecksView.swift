@@ -23,21 +23,26 @@ struct UserDecksView: View {
             
             ZStack {
                 BackgroundView()
-                
-                List {
-                    ForEach(viewModel.sections) { section in
-                        createFactionSection(section)
+                if !viewModel.decks.isEmpty {
+                    List {
+                        ForEach(viewModel.sections) { section in
+                            createFactionSection(section)
+                        }
                     }
+                    .scrollContentBackground(.hidden)
+                } else {
+                    Text("No Decks Found")
+                        .font(.title)
+                        .bold()
                 }
-                .scrollContentBackground(.hidden)
+                
                 
             }
             .navigationTitle("My Decks")
             .onAppear {
                 Task {
                     await viewModel.loadDecks()
-                    // TODO: DELETE PRINT STATEMENT BEFORE PRODUCTION
-//                    print("Decks after load: \(viewModel.decks)")
+                   
                     
                 }
             }
@@ -54,9 +59,11 @@ struct UserDecksView: View {
                 }
             } else {
                 // Handle the Hunter faction case with no clans
+                // TODO: i edited the nav link for testing deleted or use after testing
                 VStack {
                     ForEach(section.clans.first?.decks ?? []) { deck in
-                        NavigationLink(destination: EditDeckView(deck: deck)) {
+                        NavigationLink(destination: EditDeckView(viewModel: NewDeckViewModel(appState: appState), existingDeck: deck)) {
+                            
                             // Conditionally display images based on the deck type
                             if deck.hunter_deck {
                                 Image(systemName: "cross.fill")
@@ -88,7 +95,8 @@ struct UserDecksView: View {
     private func createClanSection(_ section: ClanSection) -> some View {
         Section(header: section.clan == .none ? nil : Text(section.clan.description)) {
             ForEach(section.decks) { deck in
-                NavigationLink(destination: EditDeckView(deck: deck)) {
+//                NavigationLink(destination: FuckedEditDeckView(deck: deck)) {
+                NavigationLink(destination: EditDeckView(viewModel: NewDeckViewModel(appState: appState), existingDeck: deck)) {
                     HStack {
                         // Use deck.faction to determine the image
                         Image(systemName: deck.deck_faction == "hunter" ? "cross.fill" : "drop.fill")

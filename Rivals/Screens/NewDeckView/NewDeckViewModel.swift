@@ -29,7 +29,7 @@ final class NewDeckViewModel: ObservableObject {
      
     private var appState: AppState
     
-    init(appState: AppState) {
+    init(appState: AppState, deckName: String? = nil) {
         self.appState = appState
     }
     
@@ -82,6 +82,51 @@ final class NewDeckViewModel: ObservableObject {
             }
             
         }
+    }
+    
+    func updateDeck(existingDeck: DecksResponseData) {
+       
+        guard let user = appState.loadUser() else {return}
+        
+        
+//        let body: [String: Any] = [
+//            "user": user.id,
+//            "id": existingDeck.id,
+//            "deck_name": existingDeck.deck_name,
+//            "card_list": existingDeck.card_list ?? [:],
+//            "deck_leader": existingDeck.deck_leader ?? "",
+//            "deck_haven": existingDeck.deck_haven ?? "",
+//            "deck_agenda": existingDeck.deck_agenda ?? "",
+//            "hunter_deck": existingDeck.hunter_deck,
+//            "faction_total": existingDeck.faction_total,
+//            "library_total": existingDeck.library_total,
+//            "deck_faction": existingDeck.deck_faction,
+//            "deck_clan": existingDeck.deck_clan
+//        ]
+        let body: [String: Any] = [
+            "user": user.id,
+            "id": existingDeck.id,
+            "deck_name": deckName,
+            "card_list": newDeckDict,
+            "deck_leader": leaderCard,
+            "deck_haven": havenCard,
+            "deck_agenda": agendaCard,
+            "hunter_deck": existingDeck.hunter_deck,
+            "faction_total": factionTotal,
+            "library_total": libraryTotal,
+            "deck_faction": existingDeck.deck_faction,
+            "deck_clan": existingDeck.deck_clan
+        ]
+        
+        NetworkManager.shared.makeAuthenticatedRequest(endpoint: "decks/\(existingDeck.id)", method: "PUT", body: body, responseType: DecksResponseData.self) { result in
+            switch result {
+            case .success(let responseData):
+                print("Updated Deck: \(responseData)")
+            case .failure(let error):
+                print("Failed to update deck: \(error)")
+            }
+        }
+        
     }
     
     

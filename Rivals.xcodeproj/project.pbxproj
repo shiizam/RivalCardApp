@@ -32,13 +32,18 @@
 		BC137EB42B8A98B7009E077E /* UserDeckTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC137EB32B8A98B7009E077E /* UserDeckTitleView.swift */; };
 		BC137EC22B8A9E85009E077E /* CardsHListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC137EC12B8A9E85009E077E /* CardsHListView.swift */; };
 		BC24640D2BAE1EEC003B5751 /* AllCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24640C2BAE1EEC003B5751 /* AllCardsView.swift */; };
-		BC24CEF02C6D5183007035BE /* EditDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24CEEF2C6D5183007035BE /* EditDeckView.swift */; };
+		BC24CEF02C6D5183007035BE /* FuckedEditDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24CEEF2C6D5183007035BE /* FuckedEditDeckView.swift */; };
 		BC30903E2BB45F1600F4B17F /* AddCardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC30903D2BB45F1600F4B17F /* AddCardButton.swift */; };
 		BC3090422BB4779000F4B17F /* ClanFilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3090412BB4779000F4B17F /* ClanFilterButtonView.swift */; };
 		BC4120652BAF8E640029046D /* NewDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4120642BAF8E630029046D /* NewDeckView.swift */; };
+		BC45CF8C2D5570AE0037055F /* EditDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC45CF8B2D5570AE0037055F /* EditDeckView.swift */; };
 		BC598C542C5D21910034C0B6 /* UserStateVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC598C532C5D21910034C0B6 /* UserStateVM.swift */; };
 		BC5C823E2C6B9B2800E950FE /* FactionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5C823D2C6B9B2800E950FE /* FactionPicker.swift */; };
 		BC63896F2BB5C1C20031A9CA /* ClanFilterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC63896E2BB5C1C20031A9CA /* ClanFilterListView.swift */; };
+		BC6AE23D2D53FF3000DAE15A /* LeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6AE23C2D53FF3000DAE15A /* LeaderButton.swift */; };
+		BC71CA8E2D57E476005469E1 /* ver1EditDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC71CA8D2D57E476005469E1 /* ver1EditDeck.swift */; };
+		BC71CA912D594F44005469E1 /* CurrentDeckSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC71CA902D594F44005469E1 /* CurrentDeckSheetView.swift */; };
+		BC71CA932D5952BB005469E1 /* AllCardsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC71CA922D5952BB005469E1 /* AllCardsListCell.swift */; };
 		BC7C78942C5549F4009F9093 /* FilledLeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C78932C5549F4009F9093 /* FilledLeaderButton.swift */; };
 		BC7EB4312C66623A009C56F4 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EB4302C66623A009C56F4 /* DeckView.swift */; };
 		BC7EB4362C6692F9009C56F4 /* NewDeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EB4352C6692F9009C56F4 /* NewDeckViewModel.swift */; };
@@ -67,6 +72,7 @@
 		BCF8A6512C62784F007C2E63 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF8A6502C62784F007C2E63 /* AppState.swift */; };
 		BCF8A6532C62BA21007C2E63 /* InputPlaceholder+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF8A6522C62BA21007C2E63 /* InputPlaceholder+Ext.swift */; };
 		BCF8A6582C62C1A1007C2E63 /* TabBar+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF8A6572C62C1A1007C2E63 /* TabBar+Ext.swift */; };
+		BCFDC11D2D515222002CAFB8 /* DeckInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFDC11C2D515222002CAFB8 /* DeckInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,13 +119,18 @@
 		BC137EB32B8A98B7009E077E /* UserDeckTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeckTitleView.swift; sourceTree = "<group>"; };
 		BC137EC12B8A9E85009E077E /* CardsHListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsHListView.swift; sourceTree = "<group>"; };
 		BC24640C2BAE1EEC003B5751 /* AllCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCardsView.swift; sourceTree = "<group>"; };
-		BC24CEEF2C6D5183007035BE /* EditDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDeckView.swift; sourceTree = "<group>"; };
+		BC24CEEF2C6D5183007035BE /* FuckedEditDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuckedEditDeckView.swift; sourceTree = "<group>"; };
 		BC30903D2BB45F1600F4B17F /* AddCardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardButton.swift; sourceTree = "<group>"; };
 		BC3090412BB4779000F4B17F /* ClanFilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanFilterButtonView.swift; sourceTree = "<group>"; };
 		BC4120642BAF8E630029046D /* NewDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeckView.swift; sourceTree = "<group>"; };
+		BC45CF8B2D5570AE0037055F /* EditDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDeckView.swift; sourceTree = "<group>"; };
 		BC598C532C5D21910034C0B6 /* UserStateVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStateVM.swift; sourceTree = "<group>"; };
 		BC5C823D2C6B9B2800E950FE /* FactionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactionPicker.swift; sourceTree = "<group>"; };
 		BC63896E2BB5C1C20031A9CA /* ClanFilterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanFilterListView.swift; sourceTree = "<group>"; };
+		BC6AE23C2D53FF3000DAE15A /* LeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderButton.swift; sourceTree = "<group>"; };
+		BC71CA8D2D57E476005469E1 /* ver1EditDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ver1EditDeck.swift; sourceTree = "<group>"; };
+		BC71CA902D594F44005469E1 /* CurrentDeckSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDeckSheetView.swift; sourceTree = "<group>"; };
+		BC71CA922D5952BB005469E1 /* AllCardsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCardsListCell.swift; sourceTree = "<group>"; };
 		BC7C78932C5549F4009F9093 /* FilledLeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledLeaderButton.swift; sourceTree = "<group>"; };
 		BC7EB4302C66623A009C56F4 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		BC7EB4352C6692F9009C56F4 /* NewDeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeckViewModel.swift; sourceTree = "<group>"; };
@@ -148,6 +159,7 @@
 		BCF8A6502C62784F007C2E63 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		BCF8A6522C62BA21007C2E63 /* InputPlaceholder+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputPlaceholder+Ext.swift"; sourceTree = "<group>"; };
 		BCF8A6572C62C1A1007C2E63 /* TabBar+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBar+Ext.swift"; sourceTree = "<group>"; };
+		BCFDC11C2D515222002CAFB8 /* DeckInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +269,7 @@
 		BC137EB62B8A9CD8009E077E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BCFDC11B2D514FF8002CAFB8 /* Sections */,
 				BC7EB4342C6692A9009C56F4 /* Sheets */,
 				BCEAA3742BB31E93004114B2 /* Pickers */,
 				BC137EC02B8A9E2B009E077E /* Background */,
@@ -271,7 +284,7 @@
 				BCF8A64F2C627842007C2E63 /* AppState */,
 				BCF8A64C2C626BAB007C2E63 /* KeychainHelper */,
 				BCF8A6472C617284007C2E63 /* NetworkManager */,
-				BCBB5A7E2BA3A7430092D8F6 /* API */,
+				BCBB5A7E2BA3A7430092D8F6 /* API(DELETE) */,
 				BC137EBC2B8A9DA1009E077E /* Alerts */,
 				BC137EBB2B8A9D8E009E077E /* Extensions */,
 			);
@@ -300,6 +313,7 @@
 			children = (
 				BC137EC12B8A9E85009E077E /* CardsHListView.swift */,
 				BC24640C2BAE1EEC003B5751 /* AllCardsView.swift */,
+				BC71CA922D5952BB005469E1 /* AllCardsListCell.swift */,
 			);
 			path = CardView;
 			sourceTree = "<group>";
@@ -351,6 +365,7 @@
 		BC137EBF2B8A9E1A009E077E /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				BC6AE23B2D53FF1900DAE15A /* Global */,
 				BC137EA12B8A9003009E077E /* NewDeckButton.swift */,
 				BC30903D2BB45F1600F4B17F /* AddCardButton.swift */,
 				BCAA1AC82BB7489C006EB789 /* RemoveCardButton.swift */,
@@ -372,8 +387,9 @@
 		BC24CEEE2C6D516F007035BE /* EditDeckView */ = {
 			isa = PBXGroup;
 			children = (
-				BC24CEEF2C6D5183007035BE /* EditDeckView.swift */,
+				BC71CA8F2D59381E005469E1 /* void */,
 				BCEBBFE32CB5B7B000DDB78A /* EditCellView.swift */,
+				BC45CF8B2D5570AE0037055F /* EditDeckView.swift */,
 			);
 			path = EditDeckView;
 			sourceTree = "<group>";
@@ -390,6 +406,23 @@
 			path = NewDeckView;
 			sourceTree = "<group>";
 		};
+		BC6AE23B2D53FF1900DAE15A /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				BC6AE23C2D53FF3000DAE15A /* LeaderButton.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		BC71CA8F2D59381E005469E1 /* void */ = {
+			isa = PBXGroup;
+			children = (
+				BC71CA8D2D57E476005469E1 /* ver1EditDeck.swift */,
+				BC24CEEF2C6D5183007035BE /* FuckedEditDeckView.swift */,
+			);
+			path = void;
+			sourceTree = "<group>";
+		};
 		BC7EB42F2C66622A009C56F4 /* DeckView */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +437,7 @@
 			children = (
 				BCF889892C58373B00B48F22 /* NameDeckView.swift */,
 				BCCD23482CBAE36E00509593 /* AllCardsSheetView.swift */,
+				BC71CA902D594F44005469E1 /* CurrentDeckSheetView.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -424,13 +458,13 @@
 			path = AuthViews;
 			sourceTree = "<group>";
 		};
-		BCBB5A7E2BA3A7430092D8F6 /* API */ = {
+		BCBB5A7E2BA3A7430092D8F6 /* API(DELETE) */ = {
 			isa = PBXGroup;
 			children = (
 				BCF889862C58226000B48F22 /* postDeckRequest.swift */,
 				BC598C532C5D21910034C0B6 /* UserStateVM.swift */,
 			);
-			path = API;
+			path = "API(DELETE)";
 			sourceTree = "<group>";
 		};
 		BCC82EE32B9955B200D0B0AB /* cardCollection */ = {
@@ -474,6 +508,22 @@
 				BCF8A6502C62784F007C2E63 /* AppState.swift */,
 			);
 			path = AppState;
+			sourceTree = "<group>";
+		};
+		BCFDC11B2D514FF8002CAFB8 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				BCFDC11E2D5171AC002CAFB8 /* ListCellSections */,
+				BCFDC11C2D515222002CAFB8 /* DeckInfoView.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		BCFDC11E2D5171AC002CAFB8 /* ListCellSections */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ListCellSections;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -629,6 +679,7 @@
 				BCF8A6532C62BA21007C2E63 /* InputPlaceholder+Ext.swift in Sources */,
 				BCF8A64E2C626BD2007C2E63 /* KeychainHelper.swift in Sources */,
 				BC30903E2BB45F1600F4B17F /* AddCardButton.swift in Sources */,
+				BC71CA932D5952BB005469E1 /* AllCardsListCell.swift in Sources */,
 				BCEAA3782BB3244F004114B2 /* SingleCopyPicker.swift in Sources */,
 				BC137E9C2B8A8AF5009E077E /* BackgroundView.swift in Sources */,
 				BC137EAE2B8A9707009E077E /* String+Ext.swift in Sources */,
@@ -638,12 +689,14 @@
 				BCE50ABD2C650415007148E0 /* DecksResponse.swift in Sources */,
 				BCF8898A2C58373B00B48F22 /* NameDeckView.swift in Sources */,
 				BC91F6292C6BA08C00E4200C /* ClanPicker.swift in Sources */,
+				BC71CA8E2D57E476005469E1 /* ver1EditDeck.swift in Sources */,
 				BC137EB42B8A98B7009E077E /* UserDeckTitleView.swift in Sources */,
 				BCEBD19D2C5BE15700E878D0 /* EmptyLeaderButton.swift in Sources */,
 				BC598C542C5D21910034C0B6 /* UserStateVM.swift in Sources */,
 				BC137EC22B8A9E85009E077E /* CardsHListView.swift in Sources */,
 				BCEBBFE42CB5B7B000DDB78A /* EditCellView.swift in Sources */,
 				BC63896F2BB5C1C20031A9CA /* ClanFilterListView.swift in Sources */,
+				BC6AE23D2D53FF3000DAE15A /* LeaderButton.swift in Sources */,
 				BC24640D2BAE1EEC003B5751 /* AllCardsView.swift in Sources */,
 				BCF8A64B2C61744A007C2E63 /* NetworkManager.swift in Sources */,
 				BC91F62B2C6BA90300E4200C /* DeckPickerEnums.swift in Sources */,
@@ -654,14 +707,17 @@
 				BC137EB22B8A9848009E077E /* UserDecksViewModel.swift in Sources */,
 				BC137EA62B8A9530009E077E /* AccountViewModel.swift in Sources */,
 				BC5C823E2C6B9B2800E950FE /* FactionPicker.swift in Sources */,
+				BCFDC11D2D515222002CAFB8 /* DeckInfoView.swift in Sources */,
 				BC3090422BB4779000F4B17F /* ClanFilterButtonView.swift in Sources */,
 				BC137EA42B8A90DF009E077E /* Color+Ext.swift in Sources */,
 				BC9588E42C5EC36E00997A96 /* LoginButton.swift in Sources */,
 				BCAA1AC92BB7489C006EB789 /* RemoveCardButton.swift in Sources */,
 				BC4120652BAF8E640029046D /* NewDeckView.swift in Sources */,
+				BC71CA912D594F44005469E1 /* CurrentDeckSheetView.swift in Sources */,
 				BC137E9A2B8A8ACC009E077E /* ClansGridViewModel.swift in Sources */,
+				BC45CF8C2D5570AE0037055F /* EditDeckView.swift in Sources */,
 				BC7C78942C5549F4009F9093 /* FilledLeaderButton.swift in Sources */,
-				BC24CEF02C6D5183007035BE /* EditDeckView.swift in Sources */,
+				BC24CEF02C6D5183007035BE /* FuckedEditDeckView.swift in Sources */,
 				BCF8A6512C62784F007C2E63 /* AppState.swift in Sources */,
 				BC137EAA2B8A9658009E077E /* Alert.swift in Sources */,
 				BC137EA82B8A9618009E077E /* User.swift in Sources */,

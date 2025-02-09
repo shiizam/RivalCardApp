@@ -98,10 +98,10 @@ struct FuckedEditDeckView: View {
 //                    Sheet for displaying all cards over 'EditDeck' View
                         .sheet(isPresented: $showAllCards) {
                             
-                            AllCardsSheetView(deck: deck!, cardList: $cardList)
-                                .alignmentGuide(.listRowSeparatorLeading) { ViewDimensions in
-                                    return ViewDimensions[.listRowSeparatorLeading] - 35
-                                }
+//                            AllCardsSheetView(deck: deck!, cardList: $cardList)
+//                                .alignmentGuide(.listRowSeparatorLeading) { ViewDimensions in
+//                                    return ViewDimensions[.listRowSeparatorLeading] - 35
+//                                }
                         }
                         .presentationDetents([.fraction(0.75)])
                         .presentationDragIndicator(.visible)

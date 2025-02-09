@@ -16,6 +16,15 @@ struct AlertItem: Identifiable {
 }
 
 struct AlertContext {
+    // MARK: - MISC ALERTS
+    static let saveSuccess       = AlertItem(title: Text("Deck Updated!"),
+                                             message: Text("Deck updates have been saved."),
+                                             dismissButton: .default(Text("OK")))
+    
+    static let saveConfirmation  = AlertItem(title: Text("Confirm Save"),
+                                             message: Text("Are you sure you want to save the changes to this deck?"),
+                                             dismissButton: .default(Text("OK")))
+    
     //MARK: - NETWORK ALERTS
     static let invalidData       = AlertItem(title: Text("Server Error"),
                                              message: Text("The data received from the server was invalid. Please contact support."),

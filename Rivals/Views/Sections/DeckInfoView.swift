@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct DeckInfoView: View {
-    var factionTotal: Int = 0
-    var libraryTotal: Int = 0
+    var factionTotal: Int
+    var libraryTotal: Int
+    
     
     var leaderCard: String = "-"
     var havenCard: String = "-"
@@ -55,6 +56,6 @@ struct DeckInfoView: View {
     }
 }
 
-#Preview {
-    DeckInfoView(factionTotal: 0, libraryTotal: 0, leaderCard: "LeaderPlace", havenCard: "HavenPlace", agendaCard: "AgendaPlace")
-}
+//#Preview {
+//    DeckInfoView(factionTotal: 0, libraryTotal: 0, leaderCard: "LeaderPlace", havenCard: "HavenPlace", agendaCard: "AgendaPlace")
+//}

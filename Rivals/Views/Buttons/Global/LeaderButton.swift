@@ -8,11 +8,27 @@
 import SwiftUI
 
 struct LeaderButton: View {
+    @Binding var hasLeader: Bool
+    @Binding var leaderCard: String
+    
+    var card: Card
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if card.card_stack == "faction" {
+            if hasLeader != true && leaderCard.isEmpty {
+                EmptyLeaderButton()
+                    .onTapGesture {
+                        hasLeader = true
+                        leaderCard = card.name
+                    }
+            } else if hasLeader && card.name == leaderCard {
+                FilledLeaderButton()
+                    .onTapGesture {
+                        hasLeader = false
+                        leaderCard = ""
+                    }
+            }
+        }
     }
 }
 
-#Preview {
-    LeaderButton()
-}

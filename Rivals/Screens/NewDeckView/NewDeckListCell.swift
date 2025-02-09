@@ -9,8 +9,7 @@ import SwiftUI
 
 struct NewDeckListCell: View {
     @State private var copyAmount = 0
-    
-//    @EnvironmentObject var viewModel: NewDeckViewModel
+
     
     @Binding var newDeckDict: [String: Int]
     @Binding var libraryTotal: Int
@@ -76,25 +75,24 @@ struct NewDeckListCell: View {
                 
                 // RIGHT SIDE OF CELL
                 VStack(alignment: .center) {
-                    
+                    LeaderButton(hasLeader: $hasLeader, leaderCard: $leaderCard, card: card)
                     if copyAmount < card.copies ?? 1 {
 
                         // FACTION CARD BUTTON LOGIC
                         if card.card_stack == "faction" {
-                            if hasLeader != true && newDeckDict.contains(where: {$0.key == leaderCard}) {
-                                EmptyLeaderButton()
-                                    .onTapGesture {
-                                        hasLeader = true
-                                        leaderCard = card.name
-                                    }
-                            } else if hasLeader && card.name == leaderCard {
-                                FilledLeaderButton()
-                                    .onTapGesture {
-                                        hasLeader = false
-                                        leaderCard = ""
-                                    }
-                            }
-                            
+//                            if hasLeader != true && newDeckDict.contains(where: {$0.key == leaderCard}) {
+//                                EmptyLeaderButton()
+//                                    .onTapGesture {
+//                                        hasLeader = true
+//                                        leaderCard = card.name
+//                                    }
+//                            } else if hasLeader && card.name == leaderCard {
+//                                FilledLeaderButton()
+//                                    .onTapGesture {
+//                                        hasLeader = false
+//                                        leaderCard = ""
+//                                    }
+//                            }
                             
                             if factionTotal != factionMax {
                                 Text("Deck: \(copyAmount)")
@@ -145,22 +143,6 @@ struct NewDeckListCell: View {
                             }
                         }
                     } else {
-                        if card.card_stack == "faction" {
-                            if hasLeader && leaderCard == card.name {
-                                FilledLeaderButton()
-                                    .onTapGesture {
-                                        hasLeader = false
-                                        leaderCard = ""
-                                    }
-                            } else {
-                                EmptyLeaderButton()
-                                    .onTapGesture {
-                                        hasLeader = true
-                                        leaderCard = card.name
-                                    }
-                            }
-                        }
-                        
                         
                         Text("Max: \(copyAmount)")
                             .foregroundStyle(.white)
