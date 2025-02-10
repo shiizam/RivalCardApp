@@ -52,8 +52,6 @@ struct EditCellView: View {
                     }
                 
 
-                
-              
                 AddCardButton()
                     .opacity(qty < maxQty ? 1.0 : 0.5)
                     .disabled(qty >= maxQty)
