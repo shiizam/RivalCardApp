@@ -47,6 +47,7 @@
 		BC7C78942C5549F4009F9093 /* FilledLeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C78932C5549F4009F9093 /* FilledLeaderButton.swift */; };
 		BC7EB4312C66623A009C56F4 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EB4302C66623A009C56F4 /* DeckView.swift */; };
 		BC7EB4362C6692F9009C56F4 /* NewDeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EB4352C6692F9009C56F4 /* NewDeckViewModel.swift */; };
+		BC8201FB2D5A5E1C003B9FFD /* CardHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8201FA2D5A5E1C003B9FFD /* CardHelpers.swift */; };
 		BC91F6292C6BA08C00E4200C /* ClanPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC91F6282C6BA08C00E4200C /* ClanPicker.swift */; };
 		BC91F62B2C6BA90300E4200C /* DeckPickerEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC91F62A2C6BA90300E4200C /* DeckPickerEnums.swift */; };
 		BC9588E22C5EBC0F00997A96 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9588E12C5EBC0F00997A96 /* RegisterView.swift */; };
@@ -134,6 +135,7 @@
 		BC7C78932C5549F4009F9093 /* FilledLeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledLeaderButton.swift; sourceTree = "<group>"; };
 		BC7EB4302C66623A009C56F4 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		BC7EB4352C6692F9009C56F4 /* NewDeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeckViewModel.swift; sourceTree = "<group>"; };
+		BC8201FA2D5A5E1C003B9FFD /* CardHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHelpers.swift; sourceTree = "<group>"; };
 		BC91F6282C6BA08C00E4200C /* ClanPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanPicker.swift; sourceTree = "<group>"; };
 		BC91F62A2C6BA90300E4200C /* DeckPickerEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckPickerEnums.swift; sourceTree = "<group>"; };
 		BC9588E12C5EBC0F00997A96 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 		BC137EB72B8A9CEB009E077E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BC8201F92D5A5E04003B9FFD /* Helpers */,
 				BCF8A64F2C627842007C2E63 /* AppState */,
 				BCF8A64C2C626BAB007C2E63 /* KeychainHelper */,
 				BCF8A6472C617284007C2E63 /* NetworkManager */,
@@ -440,6 +443,14 @@
 				BC71CA902D594F44005469E1 /* CurrentDeckSheetView.swift */,
 			);
 			path = Sheets;
+			sourceTree = "<group>";
+		};
+		BC8201F92D5A5E04003B9FFD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BC8201FA2D5A5E1C003B9FFD /* CardHelpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		BC9588E02C5EBBFF00997A96 /* RegisterView */ = {
@@ -702,6 +713,7 @@
 				BC91F62B2C6BA90300E4200C /* DeckPickerEnums.swift in Sources */,
 				BC137EAC2B8A9681009E077E /* RivalsError.swift in Sources */,
 				BCC82EE52B9955E100D0B0AB /* common.swift in Sources */,
+				BC8201FB2D5A5E1C003B9FFD /* CardHelpers.swift in Sources */,
 				BC137E692B8A8363009E077E /* RivalTabView.swift in Sources */,
 				BCF8A6582C62C1A1007C2E63 /* TabBar+Ext.swift in Sources */,
 				BC137EB22B8A9848009E077E /* UserDecksViewModel.swift in Sources */,

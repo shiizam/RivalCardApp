@@ -16,7 +16,6 @@ struct AllCardsSheetView: View {
     
     // Search bar functionallity
     @State private var searchText: String = ""
-//    @State private var deckCardIDs: Set<String> = []
     
     var filteredCards: [Card] {
         guard !searchText.isEmpty else { return cards }
@@ -66,16 +65,4 @@ struct AllCardsSheetView: View {
         }
     }
         
-}
-
-
-extension AllCardsSheetView {
-    private func rangeForCard(_ card: String, cardType: String) -> ClosedRange<Int> {
-        
-        if cardType == "faction" {
-            return 0...1
-        } else {
-            return 0...3
-        }
-    }
 }

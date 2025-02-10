@@ -56,7 +56,7 @@ struct EditDeckView: View {
                     List {
                         Section(header: Text("Current Deck Cards")) {
                             ForEach(viewModel.newDeckDict.keys.sorted(), id: \.self) { cardName in
-                                let maxCopies = maxCopiesAllowed(for: cardName)
+                                let maxCopies = maxCopiesAllowed(for: cardName, in: cards)
                                 let card = cards.first(where: {$0.name == cardName})
                                 EditCellView(
                                     card: card!,
@@ -89,32 +89,6 @@ struct EditDeckView: View {
                     }
                     .scrollContentBackground(.hidden)
 
-                    // Searchable Card List (to add new cards)
-//                    TextField("Search Cards", text: $searchText)
-//                        .textFieldStyle(RoundedBorderTextFieldStyle())
-//                        .padding()
-//                    
-//                    List(filteredCards, id: \.self) { card in
-//                        HStack {
-//                            Text(card.name)
-//                            Spacer()
-//                            
-//                            if (viewModel.newDeckDict[card.name] ?? 0) < 1 {
-//                                Button("Add") {
-//                                    viewModel.newDeckDict[card.name] = 1
-//                                    if (card.card_stack == "faction") {
-//                                        viewModel.factionTotal += 1
-//                                    } else {
-//                                        viewModel.libraryTotal += 1
-//                                    }
-//                                }
-//                                .buttonStyle(.bordered)
-//                            }
-//                        }
-//                    }
-//                    .scrollContentBackground(.hidden)
-
-                    
                     HStack {
                         // Show All Cards Button
                         Button {
@@ -146,20 +120,6 @@ struct EditDeckView: View {
                                     Text("Are you sure you want to save the changes to this deck?")
                                 }
                         }
-                        
-//                        Button("Save Changes") {
-//                            showSaveConfirmation = true
-//                        }
-//                        .buttonStyle(.borderedProminent)
-//                        .padding()
-//                        .alert("Confirm Save", isPresented: $showSaveConfirmation) {
-//                            Button("Cancel", role: .cancel) {}
-//                            Button("Save") {
-//                                viewModel.updateDeck(existingDeck: existingDeck)
-//                            }
-//                        } message: {
-//                            Text("Are you sure you want to save the changes to this deck?")
-//                        }
                     }
                 }
             }
@@ -168,19 +128,5 @@ struct EditDeckView: View {
                 AllCardsSheetView(viewModel: viewModel, cards: cards)
             }
         }
-    }
-}
-
-
-extension EditDeckView {
-    private func maxCopiesAllowed(for cardName: String) -> Int {
-        if let card = cards.first(where: {$0.name == cardName }) {
-            if card.card_stack == "faction" || card.card_stack == "agenda" || card.card_stack == "haven" {
-                return 1
-            } else {
-                return 3
-            }
-        }
-        return 3
     }
 }

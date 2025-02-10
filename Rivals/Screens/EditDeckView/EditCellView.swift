@@ -28,14 +28,13 @@ struct EditCellView: View {
                 .font(.headline).bold()
                 .foregroundStyle(.primary)
             
-            Text("x: \(qty)")
+            Text("Qty: \(qty)")
                 .font(.headline)
                 .foregroundStyle(.primary)
             
             Spacer()
             
-            
-            
+            // RIGHT SIDE OF LIST CELL
             HStack {
                 
                 LeaderButton(hasLeader: $hasLeader, leaderCard: $leaderCard, card: card)

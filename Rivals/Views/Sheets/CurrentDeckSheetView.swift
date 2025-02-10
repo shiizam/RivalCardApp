@@ -19,7 +19,7 @@ struct CurrentDeckSheetView: View {
             List {
                 Section(header: Text("Current Deck Cards")) {
                     ForEach(viewModel.newDeckDict.keys.sorted(), id: \.self) { cardName in
-                        let maxCopies = maxCopiesAllowed(for: cardName)
+                        let maxCopies = maxCopiesAllowed(for: cardName, in: cards)
                         let card = cards.first(where: {$0.name == cardName})
                         EditCellView(
                             card: card!,
@@ -52,19 +52,5 @@ struct CurrentDeckSheetView: View {
             }
             .scrollContentBackground(.hidden)
         }
-    }
-}
-
-// TODO: REFACTOR - this is currently repeated code from the EditDeckView, add as a helper function instead
-extension CurrentDeckSheetView {
-    private func maxCopiesAllowed(for cardName: String) -> Int {
-        if let card = cards.first(where: {$0.name == cardName }) {
-            if card.card_stack == "faction" || card.card_stack == "agenda" || card.card_stack == "haven" {
-                return 1
-            } else {
-                return 3
-            }
-        }
-        return 3
     }
 }
