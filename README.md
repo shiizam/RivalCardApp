@@ -18,9 +18,7 @@ With an intuitive interface, users can seamlessly add & remove cards from a curr
 
 
 ### Demo
-Provide any screenshots, GIFs, or videos demonstrating how your project works.
-
-You can also include a **demo video** or a link to a live version of the app if applicable.
+Screenshots coming soon...
 
 ### Installation
 
